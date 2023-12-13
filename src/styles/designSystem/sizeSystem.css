@@ -1,0 +1,11 @@
+:root {
+  --w-smallBox: 200px;
+  --w-mediumBox: 300px;
+  --w-largeBox: 400px;
+
+  --h-header: 100px;
+  --h-footer: 100px;
+  --h-smallBox: 200px;
+  --h-mediumBox: 300px;
+  --h-largeBox: 400px;
+}

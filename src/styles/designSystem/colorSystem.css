@@ -53,6 +53,9 @@
   --success-500: #4ccd61;
   --warning-500: #ffb446;
   --error-500: #f75f5f;
+  --selected-1: #5716e5;
+  --unselected-1: #e5eafa;
+
   --rev-bg-50: #1a213b;
   --rev-bg-100: #181f36;
   --rev-bg-200: #161d33;
@@ -165,6 +168,9 @@
     --success-500: #39b169;
     --warning-500: #e9a43e;
     --error-500: #d94d4d;
+    --selected-1: #ddee40;
+    --unselected-1: #fae5e5;
+
     --rev-bg-50: #feffff;
     --rev-bg-100: #fafbff;
     --rev-bg-200: #f6f7fc;

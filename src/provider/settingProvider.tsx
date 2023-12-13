@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "../styles/global/reset.css";
 import "../styles/global/globals.css";
 import "../styles/designSystem/colorSystem.css";
+import "../styles/designSystem/sizeSystem.css";
 
 import "swiper/css";
 

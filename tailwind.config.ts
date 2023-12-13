@@ -164,6 +164,9 @@ module.exports = {
         "success-ez": "var(--success-500)",
         "warning-ez": "var(--warning-500)",
         "error-ez": "var(--error-500)",
+        "selected-1": "var(--selected-1)",
+        "unselected-1": "var(--unselected-1)",
+
         "rev-fg-static": "var(--rev-fg-static)",
         "rev-fg-focus": "var(--rev-fg-focus)",
         "rev-fg-middle": "var(--rev-fg-middle)",
@@ -306,6 +309,18 @@ module.exports = {
       boxShadow: {
         "papa-sm": "0px 10px 16px 0px rgba(0, 0, 0, 0.04)",
         "papa-input": "-5px 5px 20px 0px rgba(0, 0, 0, 0.05)",
+      },
+      width: {
+        "w-smallBox": "var(--w-smallBox)",
+        "w-middleBox": "var(--w-middleBox)",
+        "w-largeBox": "var(--w-largeBox)",
+      },
+      height: {
+        "h-header": "var(--h-header)",
+        "h-footer": "var(--h-footer)",
+        "h-smallBox": "var(--h-smallBox)",
+        "h-middleBox": "var(--h-middleBox)",
+        "h-largeBox": "var(--h-largeBox)",
       },
     },
   },
