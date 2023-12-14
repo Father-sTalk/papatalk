@@ -112,7 +112,7 @@
   --rev-error-500: #d94d4d;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg-50: #1a213b;
     --bg-100: #181f36;
@@ -226,4 +226,4 @@
     --rev-warning-500: #ffb446;
     --rev-error-500: #f75f5f;
   }
-}
+} */
