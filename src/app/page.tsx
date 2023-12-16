@@ -1,29 +1,25 @@
 "use client";
 import React from "react";
 
-import ChatIcon from "@/assets/icon/chat";
-import CheckIcon from "@/assets/icon/check";
-import SortIcon from "@/assets/icon/sort";
-import CheckBoxIcon from "@/assets/icon/checkBox";
-import RadioSelectIcon from "@/assets/icon/radioSelect";
-import LogoutIcon from "@/assets/icon/logout";
-import ThumbsUpIcon from "@/assets/icon/thumbsup";
+import Label from "@/components/bootstrap/button/labelButton";
+import Input from "@/components/bootstrap/input/input";
 
 export default function Home() {
-  const [selected, setSlected] = React.useState(false);
-  const onClickHandler = () => {
-    setSlected(!selected);
-  };
+  const [state, setState] = React.useState<string>("");
   return (
-    <div className="w-w-smallBox h-h-header bg-fg-focus">
-      <LogoutIcon />
-      <SortIcon sort={selected ? "asc" : "desc"} />
-      <ChatIcon selected={selected} />
-      <CheckIcon selected={selected} />
-      <CheckBoxIcon checked={selected} size={{ width: 200, height: 200 }} />
-      <RadioSelectIcon checked={selected} size={{ width: 30, height: 30 }} />
-      <ThumbsUpIcon up={selected} />
-      <button onClick={onClickHandler}>클릭</button>
+    <div className="w-w-smallBox h-h-header">
+      <Label
+        text="클릭zzzzzzzz"
+        size="mid"
+        bgColorClass="bg-fg-focus"
+        textColorClass="text-white"
+      />
+      <Input
+        type="text"
+        placeholder="플레이스홀더"
+        value={state}
+        setValue={setState}
+      />
     </div>
   );
 }

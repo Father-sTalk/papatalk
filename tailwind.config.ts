@@ -16,6 +16,7 @@ module.exports = {
         xs: "320px",
       },
       backgroundColor: {
+        "papa-primary": "var(--primary)",
         "papa-50": "var(--bg-50)",
         "papa-100": "var(--bg-100)",
         "papa-200": "var(--bg-200)",
@@ -32,6 +33,7 @@ module.exports = {
         "fg-defocus": "var(--fg-defocus)",
         "fg-dim": "var(--fg-dim)",
         "fg-unabled": "var(--fg-unabled)",
+        "fg-disabled": "var(--fg-disabled)",
         "fg-bg": "var(--fg-bg)",
         "sb-accent-focus": "var(--sb-accent-focus)",
         "sb-accent-middle": "var(--sb-accent-middle)",
@@ -126,6 +128,7 @@ module.exports = {
         "rev-error-ez": "var(--rev-error-500)",
       },
       textColor: {
+        "papa-primary": "var(--primary)",
         "papa-50": "var(--bg-50)",
         "papa-100": "var(--bg-100)",
         "papa-200": "var(--bg-200)",
@@ -164,8 +167,7 @@ module.exports = {
         "success-ez": "var(--success-500)",
         "warning-ez": "var(--warning-500)",
         "error-ez": "var(--error-500)",
-        "selected-1": "var(--selected-1)",
-        "unselected-1": "var(--unselected-1)",
+        "fg-disabled": "var(--fg-disabled)",
 
         "rev-fg-static": "var(--rev-fg-static)",
         "rev-fg-focus": "var(--rev-fg-focus)",
@@ -197,6 +199,7 @@ module.exports = {
         "rev-error-ez": "var(--rev-error-500)",
       },
       borderColor: {
+        "papa-primary": "var(--primary)",
         "papa-50": "var(--bg-50)",
         "papa-100": "var(--bg-100)",
         "papa-200": "var(--bg-200)",
@@ -213,6 +216,7 @@ module.exports = {
         "fg-defocus": "var(--fg-defocus)",
         "fg-dim": "var(--fg-dim)",
         "fg-unabled": "var(--fg-unabled)",
+        "fg-disabled": "var(--fg-disabled)",
         "fg-bg": "var(--fg-bg)",
         "sb-accent-focus": "var(--sb-accent-focus)",
         "sb-accent-middle": "var(--sb-accent-middle)",
