@@ -6,7 +6,7 @@ import { MENU } from "@/constants/menu";
 interface Props {
   children: React.ReactNode;
 }
-const exceptPath = [MENU.contact.path];
+const exceptPath = [MENU.sos.path];
 
 const DefaultContainer: React.FC<Props> = ({ children }) => {
   const path = usePathname();

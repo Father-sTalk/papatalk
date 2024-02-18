@@ -2,7 +2,7 @@ import React from "react";
 
 import { iconColor } from "../config/iconColor";
 interface Props {
-  checked: boolean;
+  checked?: boolean;
   size?: { width: number; height: number };
 }
 const RadioSelectIcon: React.FC<Props> = ({ checked, size }) => {

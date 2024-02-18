@@ -1,6 +1,6 @@
 import React from "react";
 
-import { iconColor } from "../config/iconColor";
+import { iconColor } from "../../config/iconColor";
 interface Props {
   up?: boolean;
   size?: { width: number; height: number };

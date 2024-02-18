@@ -1,8 +1,8 @@
 import React from "react";
 
-import { iconColor } from "../config/iconColor";
+import { iconColor } from "../../config/iconColor";
 interface Props {
-  sort: "asc" | "desc";
+  sort?: "asc" | "desc";
   size?: { width: number; height: number };
 }
 const SortIcon: React.FC<Props> = ({ sort, size }) => {
@@ -40,7 +40,7 @@ const SortIcon: React.FC<Props> = ({ sort, size }) => {
         />
       </svg>
     );
-  }
+  } else return;
 };
 
 export default SortIcon;

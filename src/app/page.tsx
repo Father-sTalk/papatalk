@@ -1,28 +1,30 @@
 "use client";
 import React from "react";
-import dynamic from "next/dynamic";
 
-import Label from "@/components/bootstrap/button/labelButton";
-
-const ModalContainer = dynamic(
-  () => import("@/components/bootstrap/container/modalContainer"),
-  { ssr: false },
-);
+import { ICON } from "@/assets/icon";
+import CardThree from "@/components/bootstrap/card/card_three";
 
 export default function Home() {
-  const [state, setState] = React.useState<boolean>(true);
   return (
     <div className="w-full h-h-header bg-fg-focus">
-      {state && (
-        <ModalContainer onClose={() => setState(false)}>
-          <Label
-            text="클릭zzzzzzzz"
-            size="mid"
-            bgColorClass="bg-fg-focus"
-            textColorClass="text-white"
-          />
-        </ModalContainer>
-      )}
+      <CardThree
+        card={{
+          user: {
+            id: "1",
+            nickname: "test",
+            profileImg: "https://via.placeholder.com/150",
+          },
+          title:
+            "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+          content:
+            "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+          empathy: 1,
+          empathied: true,
+          view: 3,
+          createdAt: "2022-01-01",
+        }}
+      />
+      <ICON.chat selected={true} />
     </div>
   );
 }
