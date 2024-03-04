@@ -1,34 +1,64 @@
+"use client";
 import React from "react";
-import Link from "next/link";
 
-import { HeaderMenu, MENU } from "@/constants/menu";
+import { Avatar } from "@nextui-org/react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRecoilValue } from "recoil";
+
 import { ICON } from "@/assets/icon";
+import { MenuGroup, MENU } from "@/constants/menu";
+import { userInfo } from "@/recoil/user/user_info";
 interface MenuProps {
   menu: MenuItem;
 }
 const Header = () => {
+  const { profileImage } = useRecoilValue(userInfo);
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link href={MENU.home.path} className="flex">
-          <ICON.thumb />
-          <span className="ml-3 text-xl">아빠들만의 속 이야기</span>
-        </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          {HeaderMenu.map((menu) => (
-            <HeaderLink menu={menu} key={menu.path} />
-          ))}
-        </nav>
+    <header className="text-gray-600 body-font w-full border-b-small border-default-200">
+      <div className="container mx-auto flex flex-wrap justify-between p-5 items-center max-w-[128rem]">
+        <div className="flex flex-wrap gap-[4rem] items-center text-base">
+          <Link href={MENU.home.path} className="flex">
+            <Image
+              src="/img/logo/logo.png"
+              alt="header_logo"
+              width={90}
+              height={20}
+            />
+          </Link>
+          <nav className="flex gap-[0.8rem]">
+            {MenuGroup.main.map((menu) => (
+              <HeaderLink menu={menu} key={menu.path} />
+            ))}
+          </nav>
+        </div>
+        <section>
+          <div className="flex gap-[0.8rem] items-center">
+            <Avatar src={profileImage} alt="profile_image" />
+            <ICON.chevronDown size={{ width: 20, height: 20 }} />
+          </div>
+        </section>
       </div>
     </header>
   );
 };
 
 export default Header;
+
 const HeaderLink: React.FC<MenuProps> = ({ menu }) => {
+  const [isClicked, setIsClicked] = React.useState(false);
+  const handleClick = () => {
+    setIsClicked(true);
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 500);
+  };
   return (
     <Link href={menu.path} key={menu.path}>
-      <li className="mx-2 hover:bg-sb-accent-focus hover:text-white p-2 rounded">
+      <li
+        className={`p-2 text-menu ${isClicked ? "text-primary-500" : "text-layout_black hover:text-default-500"}`}
+        onClick={handleClick}
+      >
         {menu.name}
       </li>
     </Link>

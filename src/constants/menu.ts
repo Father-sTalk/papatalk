@@ -8,7 +8,7 @@ export const MENU: MenuList = {
     icon: "",
   },
   about: {
-    name: "about",
+    name: "소개",
     path: "/about",
     icon: "",
   },
@@ -24,5 +24,7 @@ export const MENU: MenuList = {
   },
 };
 
-export const HeaderMenu = [MENU.about, MENU.community, MENU.sos];
-export const SideMenu = { main: [MENU.about], sub: [MENU.community, MENU.sos] };
+export const MenuGroup = {
+  main: [MENU.about, MENU.community, MENU.sos],
+  sub: [],
+};

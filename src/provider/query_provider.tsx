@@ -1,13 +1,8 @@
-"use client";
 import React from "react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import "../styles/global/reset.css";
-import "../styles/global/globals.css";
-import "../styles/designSystem/colorSystem.css";
-import "../styles/designSystem/sizeSystem.css";
-
+import LoadingProvider from "./loading_provider";
 interface Props {
   children: React.ReactNode;
 }
@@ -20,15 +15,13 @@ const queryClient = new QueryClient({
     },
   },
 });
-const MockProvider: React.FC<Props> = ({ children }) => {
+
+const QueryProvider: React.FC<Props> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <section className="w-full flex flex-col items-center justify-center">
-        {children}
-      </section>
-      <div id="portal" />
+      <LoadingProvider>{children}</LoadingProvider>
     </QueryClientProvider>
   );
 };
 
-export default MockProvider;
+export default QueryProvider;

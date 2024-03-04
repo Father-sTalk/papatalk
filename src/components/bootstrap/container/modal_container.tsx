@@ -1,4 +1,5 @@
 import React from "react";
+
 import ReactDOM from "react-dom";
 
 const Modal: React.FC<{ onClose: () => void; children: React.ReactNode }> = ({

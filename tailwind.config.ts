@@ -51,6 +51,11 @@ module.exports = {
         xl: "3.2rem",
         xxl: "4rem",
       },
+      colors: {
+        layout_background: "var(--layout-background)",
+        layout_divider: "var(--layout-divider)",
+        layout_black: "var(--layout-black)",
+      },
     },
   },
   plugins: [nextui()],

@@ -1,10 +1,11 @@
-import { Avatar } from "@nextui-org/react";
 import React from "react";
+
+import { Avatar } from "@nextui-org/react";
 
 import { dateToString } from "@/utils/formatter/dateToString";
 
-import BtnIcon from "../button/btn_icon";
 import BtnEmpathy from "../button/btn_empathy";
+import BtnIcon from "../button/btn_icon";
 interface Props {
   card: {
     user: {
