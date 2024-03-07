@@ -2,7 +2,6 @@
 import React from "react";
 
 import { NextUIProvider } from "@nextui-org/react";
-import { RecoilRoot } from "recoil";
 
 import "../styles/global/reset.css";
 import "../styles/global/globals.css";
@@ -20,14 +19,12 @@ interface Props {
 
 const SettingProvider: React.FC<Props> = ({ children }) => {
   return (
-    <RecoilRoot>
-      <QueryProvider>
-        <NextUIProvider>
-          <DefaultContainer>{children}</DefaultContainer>
-          <div id="portal" />
-        </NextUIProvider>
-      </QueryProvider>
-    </RecoilRoot>
+    <QueryProvider>
+      <NextUIProvider>
+        <DefaultContainer>{children}</DefaultContainer>
+        <div id="portal" />
+      </NextUIProvider>
+    </QueryProvider>
   );
 };
 

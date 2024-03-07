@@ -10,7 +10,7 @@ export default function HomePage() {
         title="아빠의 첫 걸음"
         content="기다림,설레임 만으로 아빠가 될 수 있을까?"
         imgSrc="/img/home/landing_image.png"
-        buttonString="아빠의 첫 걸음"
+        buttonString="자세히 보기"
         buttonLink="about"
       />
     </section>

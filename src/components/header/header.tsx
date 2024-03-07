@@ -4,16 +4,13 @@ import React from "react";
 import { Avatar } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRecoilValue } from "recoil";
 
 import { ICON } from "@/assets/icon";
 import { MenuGroup, MENU } from "@/constants/menu";
-import { userInfo } from "@/recoil/user/user_info";
 interface MenuProps {
   menu: MenuItem;
 }
 const Header = () => {
-  const { profileImage } = useRecoilValue(userInfo);
   return (
     <header className="text-gray-600 body-font w-full border-b-small border-default-200">
       <div className="container mx-auto flex flex-wrap justify-between p-5 items-center max-w-[128rem]">
@@ -34,7 +31,7 @@ const Header = () => {
         </div>
         <section>
           <div className="flex gap-[0.8rem] items-center">
-            <Avatar src={profileImage} alt="profile_image" />
+            <Avatar src={""} alt="profile_image" />
             <ICON.chevronDown size={{ width: 20, height: 20 }} />
           </div>
         </section>

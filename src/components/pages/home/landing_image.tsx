@@ -1,10 +1,9 @@
 import React from "react";
 
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { ButtonType } from "@/@types/enum/enums";
-import BasicButton from "@/components/bootstrap/button/basic_button";
 import { MENU } from "@/constants/menu";
 interface Props {
   imgSrc: string;
@@ -32,14 +31,15 @@ const LandingImage: React.FC<Props> = ({
           <p className="text-h3 text-layout_black">{content}</p>
         </div>
         <div>
-          <BasicButton
-            customType={ButtonType.default}
-            size="md"
+          <Button
+            size="lg"
             variant="solid"
+            color="primary"
+            radius="sm"
             onClick={handleButtonClick}
           >
-            {buttonString}
-          </BasicButton>
+            <span className="text-p py-[5rem]">{buttonString}</span>
+          </Button>
         </div>
       </div>
       <Image src={imgSrc} alt="landing_image" width={740} height={254} />
