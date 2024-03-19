@@ -3,11 +3,11 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 import Header from "@/components/header/header";
-import { MENU } from "@/constants/menu";
+// import { MENU } from "@/constants/menu";
 interface Props {
   children: React.ReactNode;
 }
-const exceptPath = [MENU.sos.path];
+const exceptPath = ["exception"];
 
 const DefaultContainer: React.FC<Props> = ({ children }) => {
   const path = usePathname();

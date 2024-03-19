@@ -2,23 +2,23 @@ import React from "react";
 
 import ReactDOM from "react-dom";
 
-const Modal: React.FC<{ onClose: () => void; children: React.ReactNode }> = ({
-  onClose,
-  children,
-}) => {
+import { useModalStore } from "@/store/useModalStore";
+
+const Modal = () => {
+  const { Component, isOpen, closeModal } = useModalStore();
   const modalContentRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        closeModal();
       }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose]);
+  }, [closeModal]);
 
   const handleClickOutside = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -27,13 +27,13 @@ const Modal: React.FC<{ onClose: () => void; children: React.ReactNode }> = ({
       modalContentRef.current &&
       !modalContentRef.current.contains(e.target as Node)
     ) {
-      onClose();
+      closeModal();
     }
   };
 
   const element =
     typeof document !== "undefined" ? document.getElementById("portal") : null;
-  if (!element) return null;
+  if (!isOpen || !element) return null;
 
   return ReactDOM.createPortal(
     <div
@@ -45,7 +45,7 @@ const Modal: React.FC<{ onClose: () => void; children: React.ReactNode }> = ({
         className="flex justify-center items-center bg-white rounded shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        {children}
+        {Component}
       </div>
     </div>,
     element,

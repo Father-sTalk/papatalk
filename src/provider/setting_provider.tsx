@@ -13,6 +13,7 @@ import DefaultContainer from "@/components/bootstrap/container/default_container
 
 import AuthProvider from "./auth_provider";
 import QueryProvider from "./query_provider";
+import StackProvider from "./stack_provider";
 
 interface Props {
   children: React.ReactNode;
@@ -23,7 +24,9 @@ const SettingProvider: React.FC<Props> = ({ children }) => {
     <QueryProvider>
       <NextUIProvider>
         <AuthProvider>
-          <DefaultContainer>{children}</DefaultContainer>
+          <StackProvider>
+            <DefaultContainer>{children}</DefaultContainer>
+          </StackProvider>
         </AuthProvider>
         <div id="portal" />
       </NextUIProvider>

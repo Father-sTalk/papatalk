@@ -6,7 +6,7 @@ import { Input } from "@nextui-org/react";
 import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
 import BtnLogin from "@/components/feature/btn_login";
 
-const PageLogin = () => {
+const LoginPage = () => {
   const [email, setEmail] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
   return (
@@ -45,4 +45,4 @@ const PageLogin = () => {
   );
 };
 
-export default PageLogin;
+export default LoginPage;

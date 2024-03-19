@@ -9,7 +9,7 @@ import BtnDuplicationCheck from "@/components/feature/btn_duplicationCheck";
 import BtnRegister from "@/components/feature/btn_register";
 import { validator } from "@/utils/validate/validate";
 
-const PageRegister = () => {
+const RegisterPage = () => {
   const [isEmailUnique, setEmailUnique] = React.useState<boolean>(false);
   const [isNicknameUnique, setNicknameUnique] = React.useState<boolean>(false);
 
@@ -167,7 +167,7 @@ const PageRegister = () => {
   );
 };
 
-export default PageRegister;
+export default RegisterPage;
 
 interface CheckListProps {
   checked: boolean;

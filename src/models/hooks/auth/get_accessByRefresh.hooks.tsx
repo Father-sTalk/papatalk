@@ -8,7 +8,6 @@ const useGetAccessByRefresh = () => {
   return useMutation({
     mutationFn: () => authAPI.refreshToken().then((res) => res.data),
     onSuccess: (data) => {
-      console.log(data);
       login(
         data.accessToken,
         data.refreshToken,
@@ -17,7 +16,6 @@ const useGetAccessByRefresh = () => {
       );
     },
     onError: () => {
-      console.log("in");
       logout();
     },
   });
