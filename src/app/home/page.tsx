@@ -2,6 +2,7 @@
 import React from "react";
 
 import LandingImage from "@/components/pages/home/landing_image";
+import SecondArticles from "@/components/pages/home/second_articles";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         buttonString="자세히 보기"
         buttonLink="about"
       />
+      <SecondArticles />
     </section>
   );
 }

@@ -14,13 +14,13 @@ interface Props {
 
 const CardOne: React.FC<Props> = ({ card }) => {
   return (
-    <article className="w-full h-[16.8rem] flex gap-lg p-lg border border-default-300 rounded-md">
+    <article className="w-full h-[6.5rem] flex gap-lg p-lg border border-default-300 rounded-md">
       <Image
         src={card?.imgSrc}
         width={120}
         height={120}
         alt="card_img"
-        className="min-w-[12rem]"
+        className="min-w-[7.5rem]"
       />
       <div className="flex flex-col justify-between min-w-0">
         <div className="flex flex-col gap-sm min-w-0">

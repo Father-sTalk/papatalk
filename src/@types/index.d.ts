@@ -8,8 +8,8 @@ interface MenuItem {
 }
 namespace Enums {
   enum ConfirmType {
-    Agree = 1,
-    Disagree = 0,
+    Agree = true,
+    Disagree = false,
   }
   enum ButtonType {
     default = "default",

@@ -1,4 +1,4 @@
-type MenuKeys = "home" | "about" | "community" | "sos";
+type MenuKeys = "home" | "about" | "community" | "sos" | "login" | "register";
 type MenuList = Record<MenuKeys, MenuItem>;
 
 export const MENU: MenuList = {
@@ -20,6 +20,16 @@ export const MENU: MenuList = {
   sos: {
     name: "SOS",
     path: "/sos",
+    icon: "",
+  },
+  login: {
+    name: "로그인",
+    path: "/login",
+    icon: "",
+  },
+  register: {
+    name: "가입",
+    path: "/register",
     icon: "",
   },
 };

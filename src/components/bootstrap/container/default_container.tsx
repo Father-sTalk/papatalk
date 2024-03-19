@@ -17,7 +17,7 @@ const DefaultContainer: React.FC<Props> = ({ children }) => {
   return (
     <div className={containerClasses}>
       {!isExceptPath && <Header />}
-      <div className="container mx-auto max-w-[128rem]">{children}</div>
+      <div className="container mx-auto max-w-[80rem]">{children}</div>
     </div>
   );
 };

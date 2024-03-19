@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 
 import useRegisterMutation from "@/models/hooks/auth/post_register.hooks";
 interface Props extends ApiRequest.AuthApiTypes.RegisterRequest {
-  validate: Enums.ConfirmType;
+  validate: boolean;
 }
 
 const BtnRegister: React.FC<Props> = ({ validate, ...registerData }) => {

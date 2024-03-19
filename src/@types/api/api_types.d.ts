@@ -8,11 +8,36 @@ namespace ApiRequest {
     }
     interface RegisterRequest {
       email: string;
-      nick_name: string;
+      nickname: string;
       password: string;
-      passwordCheck: string;
-      using_agree_yn: Enums.ConfirmType;
-      private_info_agree_yn: Enums.ConfirmType;
+      termsAgreed: boolean;
+      privacyPolicyAgreed: boolean;
+    }
+    interface DuplicationCheckRequest {
+      email?: string;
+      nickname?: string;
+    }
+  }
+}
+namespace ApiResponse {
+  namespace AuthApiTypes {
+    interface LoginResponse {
+      nickname: string;
+      profileImage: string;
+      accessToken: string;
+      refreshToken: string;
+    }
+    interface RegisterResponse {
+      nickname: string;
+      profileImage: string;
+      accessToken: string;
+      refreshToken: string;
+    }
+    interface RefreshTokenResponse {
+      nickname: string;
+      profileImage: string;
+      accessToken: string;
+      refreshToken: string;
     }
   }
 }

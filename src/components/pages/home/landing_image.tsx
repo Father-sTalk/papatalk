@@ -24,9 +24,9 @@ const LandingImage: React.FC<Props> = ({
     router.push(MENU[buttonLink].path);
   };
   return (
-    <article className="flex justify-between items-center w-full h-[29.4rem] px-[2.4rem] pt-[4rem] bg-primary-50">
-      <div className="flex flex-col gap-[2.4rem]">
-        <div className="flex flex-col gap-[0.8rem]">
+    <article className="flex justify-between items-center w-full h-[18.375rem] px-[1.5rem] pt-[2.5rem] bg-primary-50">
+      <div className="flex flex-col gap-[1.5rem]">
+        <div className="flex flex-col gap-[0.5rem]">
           <p className="text-h1 text-layout_black">{title}</p>
           <p className="text-h3 text-layout_black">{content}</p>
         </div>
@@ -38,7 +38,7 @@ const LandingImage: React.FC<Props> = ({
             radius="sm"
             onClick={handleButtonClick}
           >
-            <span className="text-p py-[5rem]">{buttonString}</span>
+            <span className="text-p py-[3.125rem]">{buttonString}</span>
           </Button>
         </div>
       </div>

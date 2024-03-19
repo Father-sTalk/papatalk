@@ -2,16 +2,26 @@ import { apiInstance } from "../axios/axios";
 
 const authAPI = {
   login: (data: ApiRequest.AuthApiTypes.LoginRequest) => {
-    return apiInstance.post("/login", data);
+    return apiInstance.post<ApiResponse.AuthApiTypes.LoginResponse>(
+      "/auth/login",
+      data,
+    );
   },
   register: (data: ApiRequest.AuthApiTypes.RegisterRequest) => {
-    return apiInstance.post("/signup", data);
+    return apiInstance.post<ApiResponse.AuthApiTypes.RegisterResponse>(
+      "/auth/signup",
+      data,
+    );
   },
-  logout: () => {
-    return apiInstance.post("/logout");
+  duplicationCheck: (
+    query: ApiRequest.AuthApiTypes.DuplicationCheckRequest,
+  ) => {
+    return apiInstance.get("/auth/duplication-check", { params: query });
   },
-  me: () => {
-    return apiInstance.get("/me");
+  refreshToken: () => {
+    return apiInstance.get<ApiResponse.AuthApiTypes.RefreshTokenResponse>(
+      "/auth/refresh",
+    );
   },
 };
 export default authAPI;

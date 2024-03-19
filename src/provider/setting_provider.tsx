@@ -11,6 +11,7 @@ import "../styles/designSystem/sizeSystem.css";
 import "swiper/css";
 import DefaultContainer from "@/components/bootstrap/container/default_container";
 
+import AuthProvider from "./auth_provider";
 import QueryProvider from "./query_provider";
 
 interface Props {
@@ -21,7 +22,9 @@ const SettingProvider: React.FC<Props> = ({ children }) => {
   return (
     <QueryProvider>
       <NextUIProvider>
-        <DefaultContainer>{children}</DefaultContainer>
+        <AuthProvider>
+          <DefaultContainer>{children}</DefaultContainer>
+        </AuthProvider>
         <div id="portal" />
       </NextUIProvider>
     </QueryProvider>
