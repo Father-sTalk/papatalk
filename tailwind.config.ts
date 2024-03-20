@@ -65,6 +65,9 @@ module.exports = {
         layout_divider: "var(--layout-divider)",
         layout_black: "var(--layout-black)",
       },
+      gridTemplateColumns: {
+        list: "665fr 222fr 115fr 115fr 115fr",
+      },
     },
   },
   plugins: [nextui()],

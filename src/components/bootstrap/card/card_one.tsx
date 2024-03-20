@@ -6,9 +6,9 @@ interface Props {
   card: {
     imgSrc: string;
     title: string;
-    content: string;
+    authorNickname: string;
     view: number;
-    empathy: number;
+    likes: number;
   };
 }
 
@@ -27,13 +27,13 @@ const CardOne: React.FC<Props> = ({ card }) => {
           <span className="w-full text-subtitle1 line-clamp-2 break-words">
             {card?.title}
           </span>
-          <span className="text-body2 break-words">{card?.content}</span>
+          <span className="text-body2 break-words">{card?.authorNickname}</span>
         </div>
         <div className="text-body2">
           <span className="pr-[0.8rem] border-r-1 border-primary-900">
             조회수 {card?.view}
           </span>
-          <span className="pl-[0.8rem]">공감 수 {card?.empathy}</span>
+          <span className="pl-[0.8rem]">공감 수 {card?.likes}</span>
         </div>
       </div>
     </article>

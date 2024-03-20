@@ -1,3 +1,3 @@
 export const queryKey = {
-  getDuplicationCheck: "getDuplicationCheck",
+  CATEGORY_LIST: "categoryList",
 };

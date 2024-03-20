@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 import authAPI from "@/models/api/authAPI";
-import useUserStore from "@/store/useUserStore";
+import useUserStore from "@/store/store_user";
 
 const useRegisterMutation = () => {
   const { login } = useUserStore();

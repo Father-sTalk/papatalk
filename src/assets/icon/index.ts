@@ -8,6 +8,8 @@ import ChevronRight from "./default/chevron-right";
 import ChevronDown from "./default/chevron_down";
 import EyeIcon from "./default/eye";
 import HeartIcon from "./default/heart";
+import MessageIcon from "./default/messages";
+import RankIcon from "./default/ranking";
 import SortIcon from "./feature/sort";
 import ThumbsUpIcon from "./feature/thumbsup";
 import LogoutIcon from "./logout";
@@ -25,6 +27,8 @@ export const ICON = {
   heart: HeartIcon,
   logout: LogoutIcon,
   radioSelect: RadioSelectIcon,
+  message: MessageIcon,
+  rank: RankIcon,
   sort: SortIcon,
   thumb: ThumbsUpIcon,
 };

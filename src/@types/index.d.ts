@@ -6,6 +6,7 @@ interface MenuItem {
   path: string;
   icon: string;
 }
+type CommunityTabs = "all" | "free";
 namespace Enums {
   enum ConfirmType {
     Agree = true,

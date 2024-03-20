@@ -2,7 +2,7 @@
 import React from "react";
 
 import useGetAccessByRefresh from "@/models/hooks/auth/get_accessByRefresh.hooks";
-import useUserStore from "@/store/useUserStore";
+import useUserStore from "@/store/store_user";
 interface Props {
   children: React.ReactNode;
 }

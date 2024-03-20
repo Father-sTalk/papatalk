@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { ICON } from "@/assets/icon";
 import { MenuGroup, MENU } from "@/constants/menu";
-import useUserStore from "@/store/useUserStore";
+import useUserStore from "@/store/store_user";
 
 import { BtnBasic } from "../bootstrap/button/btn_basic";
 interface MenuProps {

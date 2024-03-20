@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 
 import authAPI from "@/models/api/authAPI";
-import useUserStore from "@/store/useUserStore";
+import useUserStore from "@/store/store_user";
 
 const useGetAccessByRefresh = () => {
   const { login, logout } = useUserStore();

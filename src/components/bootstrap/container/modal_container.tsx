@@ -2,7 +2,7 @@ import React from "react";
 
 import ReactDOM from "react-dom";
 
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/store_modal";
 
 const Modal = () => {
   const { Component, isOpen, closeModal } = useModalStore();

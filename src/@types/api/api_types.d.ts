@@ -18,6 +18,22 @@ namespace ApiRequest {
       nickname?: string;
     }
   }
+  namespace CommunityApiTypes {
+    interface CommunityArticleListRequest {
+      page: number;
+      sort?: string;
+      category?: string;
+    }
+  }
+}
+interface CommunityArticle {
+  id: number;
+  title: string;
+  views: number;
+  likes: number;
+  createdAt: string;
+  category: string;
+  authorNickname: string;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -38,6 +54,14 @@ namespace ApiResponse {
       profileImage: string;
       accessToken: string;
       refreshToken: string;
+    }
+  }
+  namespace CommunityApiTypes {
+    interface CommunityArticleListResponse {
+      communityList: CommunityArticle[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
     }
   }
 }
