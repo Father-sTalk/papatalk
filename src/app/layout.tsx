@@ -1,10 +1,8 @@
 import React from "react";
+
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-import SettingProvider from "@/provider/settingProvider";
-
-const inter = Inter({ subsets: ["latin"] });
+import SettingProvider from "@/provider/setting_provider";
 
 export const metadata: Metadata = {
   title: "아빠들만의 이야기",
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="w-full">
         <SettingProvider>{children}</SettingProvider>
       </body>
     </html>

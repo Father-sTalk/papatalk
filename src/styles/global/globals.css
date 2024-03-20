@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-size: 62.5%;
-}
-
 body {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family:
     Pretendard,
     -apple-system,

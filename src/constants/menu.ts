@@ -1,4 +1,4 @@
-type MenuKeys = "home" | "about" | "community" | "sos";
+type MenuKeys = "home" | "about" | "community" | "sos" | "login" | "register";
 type MenuList = Record<MenuKeys, MenuItem>;
 
 export const MENU: MenuList = {
@@ -8,7 +8,7 @@ export const MENU: MenuList = {
     icon: "",
   },
   about: {
-    name: "about",
+    name: "소개",
     path: "/about",
     icon: "",
   },
@@ -22,7 +22,19 @@ export const MENU: MenuList = {
     path: "/sos",
     icon: "",
   },
+  login: {
+    name: "로그인",
+    path: "/login",
+    icon: "",
+  },
+  register: {
+    name: "가입",
+    path: "/register",
+    icon: "",
+  },
 };
 
-export const HeaderMenu = [MENU.about, MENU.community, MENU.sos];
-export const SideMenu = { main: [MENU.about], sub: [MENU.community, MENU.sos] };
+export const MenuGroup = {
+  main: [MENU.about, MENU.community, MENU.sos],
+  sub: [],
+};
