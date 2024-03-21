@@ -64,6 +64,7 @@ module.exports = {
         layout_background: "var(--layout-background)",
         layout_divider: "var(--layout-divider)",
         layout_black: "var(--layout-black)",
+        layout_white: "var(--layout-white)",
       },
       gridTemplateColumns: {
         list: "665fr 222fr 115fr 115fr 115fr",

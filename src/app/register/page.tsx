@@ -2,6 +2,7 @@
 import React from "react";
 
 import { Input } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 import { ICON } from "@/assets/icon";
 import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
@@ -20,6 +21,8 @@ const RegisterPage = () => {
   const [termsAgreed, setTermsAgreed] = React.useState<boolean>(false);
   const [privacyPolicyAgreed, setPrivacyPolicyAgreed] =
     React.useState<boolean>(false);
+
+  const router = useRouter();
 
   const agreeAllHandler = () => {
     const newAgreedValue = !(termsAgreed && privacyPolicyAgreed);
@@ -144,13 +147,13 @@ const RegisterPage = () => {
               checked={termsAgreed}
               text="이용약관동의"
               onClickList={setTermsAgreed}
-              onClickChevron={() => {}}
+              onClickChevron={() => router.push("/terms/service")}
             />
             <CheckList
               checked={privacyPolicyAgreed}
               text="개인정보취급동의"
               onClickList={setPrivacyPolicyAgreed}
-              onClickChevron={() => {}}
+              onClickChevron={() => router.push("/terms/privacy")}
             />
           </div>
         </section>
