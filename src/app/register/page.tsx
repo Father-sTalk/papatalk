@@ -5,6 +5,7 @@ import { Input } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
 import { ICON } from "@/assets/icon";
+import CheckBoxRight from "@/components/bootstrap/checkbox/checkbox_right";
 import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
 import BtnDuplicationCheck from "@/components/feature/btn_duplicationCheck";
 import BtnRegister from "@/components/feature/btn_register";
@@ -143,15 +144,17 @@ const RegisterPage = () => {
           </div>
           <hr />
           <div className="flex flex-col py-2">
-            <CheckList
+            <CheckBoxRight
               checked={termsAgreed}
               text="이용약관동의"
+              bold
               onClickList={setTermsAgreed}
               onClickChevron={() => router.push("/terms/service")}
             />
-            <CheckList
+            <CheckBoxRight
               checked={privacyPolicyAgreed}
               text="개인정보취급동의"
+              bold
               onClickList={setPrivacyPolicyAgreed}
               onClickChevron={() => router.push("/terms/privacy")}
             />
@@ -171,32 +174,3 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
-
-interface CheckListProps {
-  checked: boolean;
-  text: string;
-  onClickList: React.Dispatch<React.SetStateAction<boolean>>;
-  onClickChevron: () => void;
-}
-const CheckList: React.FC<CheckListProps> = ({
-  checked,
-  text,
-  onClickList,
-  onClickChevron,
-}) => {
-  return (
-    <div className="flex justify-between items-center">
-      <div
-        role="button"
-        onClick={() => onClickList((prev) => !prev)}
-        className="flex gap-2 items-center cursor-pointer"
-      >
-        <ICON.checkBox checked={checked} />
-        <span className="text-subtitle2 text-layout_black">{text}</span>
-      </div>
-      <div role="button" onClick={onClickChevron}>
-        <ICON.chevronRight />
-      </div>
-    </div>
-  );
-};
