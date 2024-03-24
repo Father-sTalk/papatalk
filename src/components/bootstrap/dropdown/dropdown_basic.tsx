@@ -15,9 +15,9 @@ import { BtnBasic } from "../button/btn_basic";
 type OnSelectionChange = ((keys: Selection) => any) | undefined;
 
 interface YearDropdownProps {
-  list: number[];
-  selected: number;
-  setSelected: React.Dispatch<React.SetStateAction<number>>;
+  list: string[];
+  selected: string;
+  setSelected: (value: string) => void;
 }
 
 const DropdownBasic: React.FC<YearDropdownProps> = ({
@@ -33,7 +33,7 @@ const DropdownBasic: React.FC<YearDropdownProps> = ({
 
   return (
     <Dropdown backdrop="blur">
-      <DropdownTrigger>
+      <DropdownTrigger className="w-[7.75rem]">
         <BtnBasic bordered="default" className="flex justify-between">
           {selected}
           <ICON.chevronDown />
@@ -46,9 +46,9 @@ const DropdownBasic: React.FC<YearDropdownProps> = ({
         onSelectionChange={changeHandler}
         className="h-40 overflow-scroll"
       >
-        {list.map((year) => (
-          <DropdownItem key={year} value={year}>
-            {year}
+        {list.map((item) => (
+          <DropdownItem key={item} value={item}>
+            {item}
           </DropdownItem>
         ))}
       </DropdownMenu>
