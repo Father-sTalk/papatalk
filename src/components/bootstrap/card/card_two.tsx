@@ -8,8 +8,8 @@ interface Props {
     title: string;
     content: string;
     view: number;
-    empathy: number;
-    reply: number;
+    likes: number;
+    replies: number;
     createdAt: string;
   };
 }
@@ -24,8 +24,8 @@ const CardTwo: React.FC<Props> = ({ card }) => {
         </div>
         <div className="flex gap-md">
           <CardButton count={card?.view} type="review" />
-          <CardButton count={card?.empathy} type="empathy" />
-          <CardButton count={card?.reply} type="reply" />
+          <CardButton count={card?.likes} type="likes" />
+          <CardButton count={card?.replies} type="reply" />
         </div>
       </div>
       <p className="text-right text-button">{dateStr}</p>

@@ -20,9 +20,16 @@ namespace ApiRequest {
   }
   namespace CommunityApiTypes {
     interface CommunityArticleListRequest {
+      search?: string;
       page: number;
       sort?: string;
-      category?: string;
+    }
+  }
+  namespace SosApiTypes {
+    interface SosArticleListRequest {
+      search?: string;
+      page: number;
+      sort?: string;
     }
   }
 }
@@ -33,6 +40,15 @@ interface CommunityArticle {
   likes: number;
   createdAt: string;
   category: string;
+  authorNickname: string;
+}
+interface SosArticle {
+  id: number;
+  title: string;
+  views: number;
+  likes: number;
+  replies: number;
+  createdAt: string;
   authorNickname: string;
 }
 namespace ApiResponse {
@@ -59,6 +75,14 @@ namespace ApiResponse {
   namespace CommunityApiTypes {
     interface CommunityArticleListResponse {
       communityList: CommunityArticle[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+  }
+  namespace SosApiTypes {
+    interface SosArticleListResponse {
+      sosList: SosArticle[];
       totalCount: number;
       totalPage: number;
       currentPage: number;

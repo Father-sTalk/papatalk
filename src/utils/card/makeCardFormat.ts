@@ -11,4 +11,17 @@ export const makeCardFormat = {
       };
     });
   },
+  Two: (data?: SosArticle[]) => {
+    return data?.map((article) => {
+      return {
+        title: article.title,
+        content: article.authorNickname,
+        view: article.views,
+        likes: article.likes,
+        replies: article.replies,
+        createdAt: article.createdAt,
+        id: article.id,
+      };
+    });
+  },
 };

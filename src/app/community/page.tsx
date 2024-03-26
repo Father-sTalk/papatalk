@@ -2,7 +2,7 @@
 import React from "react";
 
 import { ICON } from "@/assets/icon";
-import CardListPopular from "@/components/bootstrap/card_list/one/cardlist_popular";
+import CardListPopular from "@/components/bootstrap/card_list/one/cardlist_one_popular";
 import ListBasic from "@/components/bootstrap/list/list_basic";
 import CommunityTabs from "@/components/pages/community/community_tabs";
 import useGetCommunityList from "@/models/hooks/community/get_categoryList.hooks";
