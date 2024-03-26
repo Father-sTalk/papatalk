@@ -4,7 +4,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 
 import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
-import BtnLogin from "@/components/feature/btn_login";
+import BtnLogin from "@/components/feature/button/btn_login";
 
 const LoginPage = () => {
   const [email, setEmail] = React.useState<string>("");

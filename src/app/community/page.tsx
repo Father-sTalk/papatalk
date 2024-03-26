@@ -4,6 +4,7 @@ import React from "react";
 import { ICON } from "@/assets/icon";
 import CardListPopular from "@/components/bootstrap/card_list/one/cardlist_one_popular";
 import ListBasic from "@/components/bootstrap/list/list_basic";
+import BtnCreate from "@/components/feature/button/btn_create";
 import CommunityTabs from "@/components/pages/community/community_tabs";
 import useGetCommunityList from "@/models/hooks/community/get_categoryList.hooks";
 
@@ -16,9 +17,12 @@ const CommunityPage = () => {
     <section className="flex flex-col gap-8 p-6">
       <CardListPopular cardList={data?.communityList} rank={4} />
       <div className="flex flex-col gap-4">
-        <div className="flex flex-row gap-2">
-          <ICON.message color="black" />
-          <p className="text-h4">커뮤니티 모든 글</p>
+        <div className="flex justify-between items-center">
+          <div className="flex flex-row gap-2">
+            <ICON.message color="black" />
+            <p className="text-h4">커뮤니티 모든 글</p>
+          </div>
+          <BtnCreate />
         </div>
         <CommunityTabs />
       </div>

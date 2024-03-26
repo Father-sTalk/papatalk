@@ -9,6 +9,7 @@ import ChevronDown from "./default/chevron_down";
 import EyeIcon from "./default/eye";
 import HeartIcon from "./default/heart";
 import MessageIcon from "./default/messages";
+import PencilIcon from "./default/pencil";
 import RankIcon from "./default/ranking";
 import SortIcon from "./feature/sort";
 import ThumbsUpIcon from "./feature/thumbsup";
@@ -26,8 +27,9 @@ export const ICON = {
   eye: EyeIcon,
   heart: HeartIcon,
   logout: LogoutIcon,
-  radioSelect: RadioSelectIcon,
   message: MessageIcon,
+  pencil: PencilIcon,
+  radioSelect: RadioSelectIcon,
   rank: RankIcon,
   sort: SortIcon,
   thumb: ThumbsUpIcon,

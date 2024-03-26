@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { ICON } from "@/assets/icon";
 import CheckBoxRight from "@/components/bootstrap/checkbox/checkbox_right";
 import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
-import BtnDuplicationCheck from "@/components/feature/btn_duplicationCheck";
-import BtnRegister from "@/components/feature/btn_register";
+import BtnDuplicationCheck from "@/components/feature/button/btn_duplicationCheck";
+import BtnRegister from "@/components/feature/button/btn_register";
 import { validator } from "@/utils/validate/validate";
 
 const RegisterPage = () => {
