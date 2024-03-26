@@ -9,7 +9,7 @@ import DropdownBasic from "@/components/bootstrap/dropdown/dropdown_basic";
 import InputFile from "@/components/bootstrap/input/input_file";
 import TextareaBasic from "@/components/bootstrap/textarea/textarea_basic";
 
-const CommunityCreatePage: React.FC = () => {
+const SosCreatePage: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
   const [content, setContent] = React.useState<string>("");
   const [category, setCategory] = React.useState<string>("육아");
@@ -77,4 +77,4 @@ const CommunityCreatePage: React.FC = () => {
   );
 };
 
-export default CommunityCreatePage;
+export default SosCreatePage;

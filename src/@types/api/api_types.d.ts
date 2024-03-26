@@ -19,10 +19,15 @@ namespace ApiRequest {
     }
   }
   namespace CommunityApiTypes {
-    interface CommunityArticleListRequest {
+    interface GetArticleListRequest {
       search?: string;
       page: number;
       sort?: string;
+    }
+    interface CreateArticleRequest {
+      title: string;
+      content: string;
+      category: string;
     }
   }
   namespace SosApiTypes {

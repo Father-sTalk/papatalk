@@ -35,7 +35,7 @@ const DropdownBasic: React.FC<YearDropdownProps> = ({
     <Dropdown backdrop="blur">
       <DropdownTrigger className="w-[7.75rem]">
         <BtnBasic bordered="default" className="flex justify-between">
-          {selected}
+          <p className="text-layout_black">{selected}</p>
           <ICON.chevronDown />
         </BtnBasic>
       </DropdownTrigger>
@@ -44,11 +44,11 @@ const DropdownBasic: React.FC<YearDropdownProps> = ({
         selectionMode="single"
         selectedKeys={[selected]}
         onSelectionChange={changeHandler}
-        className="h-40 overflow-scroll"
+        className="max-h-40 overflow-scroll"
       >
         {list.map((item) => (
           <DropdownItem key={item} value={item}>
-            {item}
+            <p className="text-layout_black">{item}</p>
           </DropdownItem>
         ))}
       </DropdownMenu>
