@@ -50,11 +50,11 @@ interface CommunityArticle {
 interface SosArticle {
   id: number;
   title: string;
+  content: string;
   views: number;
   likes: number;
-  replies: number;
+  commentsCount: number;
   createdAt: string;
-  authorNickname: string;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {

@@ -15,10 +15,10 @@ export const makeCardFormat = {
     return data?.map((article) => {
       return {
         title: article.title,
-        content: article.authorNickname,
-        view: article.views,
+        content: article.content,
+        views: article.views,
         likes: article.likes,
-        replies: article.replies,
+        commentsCount: article.commentsCount,
         createdAt: article.createdAt,
         id: article.id,
       };
