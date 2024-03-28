@@ -69,6 +69,12 @@ module.exports = {
       gridTemplateColumns: {
         list: "665fr 222fr 115fr 115fr 115fr",
       },
+      zIndex: {
+        dropdown: 100,
+        backdrop: 150,
+        modal: 200,
+        toast: 250,
+      },
     },
   },
   plugins: [nextui()],

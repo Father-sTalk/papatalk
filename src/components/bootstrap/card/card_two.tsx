@@ -4,14 +4,7 @@ import { dateToString } from "@/utils/formatter/dateToString";
 
 import CardButton from "./card_button";
 interface Props {
-  card: {
-    title: string;
-    content: string;
-    view: number;
-    empathy: number;
-    reply: number;
-    createdAt: string;
-  };
+  card: SosArticle;
 }
 const CardTwo: React.FC<Props> = ({ card }) => {
   const dateStr = dateToString(card?.createdAt);
@@ -23,9 +16,9 @@ const CardTwo: React.FC<Props> = ({ card }) => {
           <span className="w-full text-body2 truncate">{card?.content}</span>
         </div>
         <div className="flex gap-md">
-          <CardButton count={card?.view} type="review" />
-          <CardButton count={card?.empathy} type="empathy" />
-          <CardButton count={card?.reply} type="reply" />
+          <CardButton count={card?.views} type="review" />
+          <CardButton count={card?.likes} type="likes" />
+          <CardButton count={card?.commentsCount} type="reply" />
         </div>
       </div>
       <p className="text-right text-button">{dateStr}</p>

@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { useModalStore } from "@/store/store_modal";
 
 const Modal = () => {
-  const { Component, isOpen, closeModal } = useModalStore();
+  const { Component, closeModal } = useModalStore();
   const modalContentRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -33,7 +33,7 @@ const Modal = () => {
 
   const element =
     typeof document !== "undefined" ? document.getElementById("portal") : null;
-  if (!isOpen || !element) return null;
+  if (!Component || !element) return null;
 
   return ReactDOM.createPortal(
     <div
@@ -42,7 +42,7 @@ const Modal = () => {
     >
       <div
         ref={modalContentRef}
-        className="flex justify-center items-center bg-white rounded shadow-lg"
+        className="w-[30rem] flex justify-center items-center bg-white rounded-2xl shadow-lg p-11"
         onClick={(e) => e.stopPropagation()}
       >
         {Component}

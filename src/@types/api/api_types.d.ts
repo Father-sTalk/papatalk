@@ -19,10 +19,25 @@ namespace ApiRequest {
     }
   }
   namespace CommunityApiTypes {
-    interface CommunityArticleListRequest {
+    interface GetArticleListRequest {
+      search?: string;
       page: number;
       sort?: string;
+    }
+    interface GetPopularCommunityListRequest {
       category?: string;
+    }
+    interface CreateArticleRequest {
+      title: string;
+      content: string;
+      category: string;
+    }
+  }
+  namespace SosApiTypes {
+    interface SosArticleListRequest {
+      search?: string;
+      page: number;
+      sort?: string;
     }
   }
 }
@@ -34,6 +49,18 @@ interface CommunityArticle {
   createdAt: string;
   category: string;
   authorNickname: string;
+}
+interface PopularCommunityArticle extends CommunityArticle {
+  thumbnail: string;
+}
+interface SosArticle {
+  id: number;
+  title: string;
+  content: string;
+  views: number;
+  likes: number;
+  commentsCount: number;
+  createdAt: string;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -59,6 +86,17 @@ namespace ApiResponse {
   namespace CommunityApiTypes {
     interface CommunityArticleListResponse {
       communityList: CommunityArticle[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+    interface PopularCommunityArticleListResponse {
+      communityList: PopularCommunityArticle[];
+    }
+  }
+  namespace SosApiTypes {
+    interface SosArticleListResponse {
+      sosList: SosArticle[];
       totalCount: number;
       totalPage: number;
       currentPage: number;

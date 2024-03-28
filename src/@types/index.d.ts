@@ -7,6 +7,8 @@ interface MenuItem {
   icon: string;
 }
 type CommunityTabs = "all" | "free";
+type SosTabs = "all" | "wait" | "solved";
+
 namespace Enums {
   enum ConfirmType {
     Agree = true,

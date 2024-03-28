@@ -4,7 +4,7 @@ import { queryKey } from "@/constants/queryKey";
 import communityAPI from "@/models/api/communityAPI";
 
 const useGetCommunityList = (
-  query: ApiRequest.CommunityApiTypes.CommunityArticleListRequest,
+  query: ApiRequest.CommunityApiTypes.GetArticleListRequest,
 ) => {
   return useQuery({
     queryKey: [queryKey.CATEGORY_LIST, query],
