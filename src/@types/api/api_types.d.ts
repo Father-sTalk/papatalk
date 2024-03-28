@@ -24,6 +24,9 @@ namespace ApiRequest {
       page: number;
       sort?: string;
     }
+    interface GetPopularCommunityListRequest {
+      category?: string;
+    }
     interface CreateArticleRequest {
       title: string;
       content: string;
@@ -46,6 +49,9 @@ interface CommunityArticle {
   createdAt: string;
   category: string;
   authorNickname: string;
+}
+interface PopularCommunityArticle extends CommunityArticle {
+  thumbnail: string;
 }
 interface SosArticle {
   id: number;
@@ -83,6 +89,9 @@ namespace ApiResponse {
       totalCount: number;
       totalPage: number;
       currentPage: number;
+    }
+    interface PopularCommunityArticleListResponse {
+      communityList: PopularCommunityArticle[];
     }
   }
   namespace SosApiTypes {

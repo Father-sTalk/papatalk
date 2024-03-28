@@ -46,6 +46,9 @@ const useUserStore = create<UserState>((set) => ({
       profileImage: null,
     });
   },
+  isMyPost: (author: string) => {
+    return author === useUserStore.getState().nickname;
+  },
 }));
 
 export default useUserStore;

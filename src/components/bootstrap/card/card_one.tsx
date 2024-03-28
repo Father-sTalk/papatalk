@@ -4,7 +4,7 @@ import Image from "next/image";
 
 interface Props {
   card: {
-    imgSrc: string;
+    thumbnail: string;
     title: string;
     authorNickname: string;
     view: number;
@@ -16,7 +16,7 @@ const CardOne: React.FC<Props> = ({ card }) => {
   return (
     <article className="w-full h-[6.5rem] flex gap-lg p-lg border border-default-300 rounded-md">
       <Image
-        src={card?.imgSrc}
+        src={card?.thumbnail ?? ""}
         width={120}
         height={120}
         alt="card_img"

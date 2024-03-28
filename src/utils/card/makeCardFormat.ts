@@ -1,8 +1,8 @@
 export const makeCardFormat = {
-  One: (data?: CommunityArticle[]) => {
+  One: (data?: PopularCommunityArticle[]) => {
     return data?.map((article) => {
       return {
-        imgSrc: "",
+        thumbnail: article.thumbnail,
         title: article.title,
         authorNickname: article.authorNickname,
         view: article.views,

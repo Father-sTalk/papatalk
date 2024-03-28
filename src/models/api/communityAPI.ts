@@ -9,6 +9,14 @@ const communityAPI = {
       { params: query },
     );
   },
+  getPopularCommunityList: (
+    query: ApiRequest.CommunityApiTypes.GetPopularCommunityListRequest,
+  ) => {
+    return apiInstance.get<ApiResponse.CommunityApiTypes.PopularCommunityArticleListResponse>(
+      "/community/populars",
+      { params: query },
+    );
+  },
   postCommunityArticle: (
     data: ApiRequest.CommunityApiTypes.CreateArticleRequest,
   ) => {
