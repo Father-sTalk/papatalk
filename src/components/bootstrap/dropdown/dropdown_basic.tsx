@@ -14,17 +14,13 @@ import { BtnBasic } from "../button/btn_basic";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type OnSelectionChange = ((keys: Selection) => any) | undefined;
 
-interface YearDropdownProps {
+interface Props {
   list: string[];
   selected: string;
   setSelected: (value: string) => void;
 }
 
-const DropdownBasic: React.FC<YearDropdownProps> = ({
-  list,
-  selected,
-  setSelected,
-}) => {
+const DropdownBasic: React.FC<Props> = ({ list, selected, setSelected }) => {
   const changeHandler: OnSelectionChange = (keys: Selection) => {
     if (keys instanceof Set) {
       setSelected(keys?.values().next().value);
@@ -32,7 +28,7 @@ const DropdownBasic: React.FC<YearDropdownProps> = ({
   };
 
   return (
-    <Dropdown backdrop="blur">
+    <Dropdown>
       <DropdownTrigger className="w-[7.75rem]">
         <BtnBasic bordered="default" className="flex justify-between">
           <p className="text-layout_black">{selected}</p>
