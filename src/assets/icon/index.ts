@@ -11,6 +11,7 @@ import HeartIcon from "./default/heart";
 import MessageIcon from "./default/messages";
 import PencilIcon from "./default/pencil";
 import RankIcon from "./default/ranking";
+import { SearchIcon } from "./default/search";
 import SortIcon from "./feature/sort";
 import ThumbsUpIcon from "./feature/thumbsup";
 import LogoutIcon from "./logout";
@@ -31,6 +32,7 @@ export const ICON = {
   pencil: PencilIcon,
   radioSelect: RadioSelectIcon,
   rank: RankIcon,
+  search: SearchIcon,
   sort: SortIcon,
   thumb: ThumbsUpIcon,
 };
