@@ -27,6 +27,9 @@ namespace ApiRequest {
     interface GetPopularCommunityListRequest {
       category?: string;
     }
+    interface GetArticleRequest {
+      id: string;
+    }
     interface CreateArticleRequest {
       title: string;
       content: string;
@@ -92,6 +95,20 @@ namespace ApiResponse {
     }
     interface PopularCommunityArticleListResponse {
       communityList: PopularCommunityArticle[];
+    }
+    interface CommunityArticleResponse {
+      id: number;
+      title: string;
+      content: string;
+      category: string;
+      images: string[];
+      views: number;
+      likes: number;
+      liked: boolean;
+      authorId: number;
+      authorNickname: string;
+      authorProfileImage: string;
+      createdAt: string;
     }
   }
   namespace SosApiTypes {

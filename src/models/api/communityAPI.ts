@@ -17,6 +17,13 @@ const communityAPI = {
       { params: query },
     );
   },
+  getCommunityArticle: (
+    path: ApiRequest.CommunityApiTypes.GetArticleRequest,
+  ) => {
+    return apiInstance.get<ApiResponse.CommunityApiTypes.CommunityArticleResponse>(
+      `/community/${path.id}`,
+    );
+  },
   postCommunityArticle: (
     data: ApiRequest.CommunityApiTypes.CreateArticleRequest,
   ) => {

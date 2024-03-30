@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 
+import { Pagination } from "@nextui-org/react";
+
 import { ICON } from "@/assets/icon";
 import CardListPopular from "@/components/bootstrap/card_list/one/cardlist_one_popular";
 import DropdownBasic from "@/components/bootstrap/dropdown/dropdown_basic";
@@ -8,7 +10,7 @@ import InputSearch from "@/components/bootstrap/input/input_search";
 import ListBasic from "@/components/bootstrap/list/list_basic";
 import BtnCreate from "@/components/feature/button/btn_create";
 import CommunityTabs from "@/components/pages/community/community_tabs";
-import useGetCommunityList from "@/models/hooks/community/get_categoryList.hooks";
+import useGetCommunityList from "@/models/hooks/community/get_communityList.hooks";
 import useGetPopularCommunityList from "@/models/hooks/community/get_popularCategoryList.hooks";
 
 const CommunityPage = () => {
@@ -16,10 +18,11 @@ const CommunityPage = () => {
   const [searchValue, setSearchValue] = React.useState<string>("");
 
   const [sort, setSort] = React.useState<string>("최신 순");
+  const [page, setPage] = React.useState<number>(1);
 
   const { data: popularData, isLoading: popularIsLoading } =
     useGetPopularCommunityList({});
-  const { data, isLoading } = useGetCommunityList({ page: 1, search });
+  const { data, isLoading } = useGetCommunityList({ page, search });
   if (isLoading || popularIsLoading) {
     return <div>Loading...</div>;
   }
@@ -59,6 +62,14 @@ const CommunityPage = () => {
         {data?.communityList.map((article) => (
           <ListBasic key={article.id} listData={article} type="data" />
         ))}
+        <div className="flex justify-center py-4">
+          <Pagination
+            total={data?.totalPage || 0}
+            initialPage={page}
+            onChange={setPage}
+            showControls
+          />
+        </div>
       </div>
     </section>
   );
