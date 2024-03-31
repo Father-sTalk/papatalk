@@ -27,7 +27,14 @@ const communityAPI = {
   postCommunityArticle: (
     data: ApiRequest.CommunityApiTypes.CreateArticleRequest,
   ) => {
-    return apiInstance.post("/community", data, {
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("content", data.content);
+    formData.append("category", data.category);
+    data.images.forEach((image) => {
+      formData.append("images", image);
+    });
+    return apiInstance.post("/community", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
   },

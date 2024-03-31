@@ -8,7 +8,7 @@ interface MenuItem {
 }
 type CommunityTabs = "all" | "free";
 type SosTabs = "all" | "wait" | "solved";
-
+type ContentsType = "community" | "sos";
 namespace Enums {
   enum ConfirmType {
     Agree = true,

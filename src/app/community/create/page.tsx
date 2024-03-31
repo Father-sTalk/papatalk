@@ -8,6 +8,7 @@ import { BtnBasic } from "@/components/bootstrap/button/btn_basic";
 import DropdownBasic from "@/components/bootstrap/dropdown/dropdown_basic";
 import InputFile from "@/components/bootstrap/input/input_file";
 import TextareaBasic from "@/components/bootstrap/textarea/textarea_basic";
+import useCommunityArticleMutation from "@/models/hooks/community/post_communityArticle.hooks";
 
 const CommunityCreatePage: React.FC = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -15,15 +16,17 @@ const CommunityCreatePage: React.FC = () => {
   const [category, setCategory] = React.useState<string>("육아");
   const [image, setImage] = React.useState<File | null>(null);
 
+  const { mutate } = useCommunityArticleMutation();
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("content", content);
-    if (image) {
-      formData.append("image", image);
-    }
+    const data = {
+      title,
+      content,
+      category,
+      images: image ? [image] : [],
+    };
+    mutate(data);
   };
 
   return (

@@ -34,6 +34,7 @@ namespace ApiRequest {
       title: string;
       content: string;
       category: string;
+      images: File[];
     }
   }
   namespace SosApiTypes {
@@ -41,6 +42,18 @@ namespace ApiRequest {
       search?: string;
       page: number;
       sort?: string;
+    }
+  }
+  namespace CommentApiTypes {
+    interface GetCommentListRequest {
+      contentsType: ContentsType;
+      contentsId: string;
+      sort?: string;
+      page?: number;
+    }
+    interface CreateCommentRequest {
+      articleId: string;
+      content: string;
     }
   }
 }

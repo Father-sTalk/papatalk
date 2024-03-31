@@ -1,17 +1,5 @@
 import React from "react";
 
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "...",
-//   description: "...",
-// };
-
-// const CommunityDetailLayout = () => {
-//   return <div></div>;
-// };
-
-// export default CommunityDetailLayout;
 import type { Metadata } from "next";
 
 import communityAPI from "@/models/api/communityAPI";
@@ -39,5 +27,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="w-full">{children}</section>;
+  return <section className="w-[50rem] mx-auto">{children}</section>;
 }
