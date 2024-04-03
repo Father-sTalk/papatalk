@@ -1,6 +1,9 @@
 import React from "react";
+
+import { useRouter } from "next/navigation";
 interface Props {
   listData?: {
+    id: number;
     title: string;
     authorNickname: string;
     views: number;
@@ -10,12 +13,18 @@ interface Props {
   type: "header" | "data";
 }
 const ListBasic: React.FC<Props> = ({ listData, type }) => {
+  const router = useRouter();
   const date = new Date(listData?.createdAt || "");
   const formattedDate = date.toLocaleDateString("ko-KR", {
     year: "2-digit",
     month: "2-digit",
     day: "2-digit",
   });
+
+  const onClickHandler = () => {
+    router.push(`/community/${listData?.id}`);
+  };
+
   if (type === "header") {
     return (
       <div className="grid grid-cols-list h-[2.25rem] items-center text-p">
@@ -29,7 +38,9 @@ const ListBasic: React.FC<Props> = ({ listData, type }) => {
   }
   return (
     <div className="grid grid-cols-list h-[2.25rem] items-center border-b-1 border-default-300 text-table">
-      <div>{listData?.title}</div>
+      <div role="button" onClick={onClickHandler}>
+        {listData?.title}
+      </div>
       <div>{listData?.authorNickname}</div>
       <div>{listData?.views}</div>
       <div>{listData?.likes}</div>

@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { ICON } from "@/assets/icon";
 import { BtnBasic } from "@/components/bootstrap/button/btn_basic";
 
-const BtnCreate = () => {
+const BtnGoCreate = () => {
   const pathname = usePathname();
   const router = useRouter();
   const goToCreate = () => {
@@ -24,4 +24,4 @@ const BtnCreate = () => {
   );
 };
 
-export default BtnCreate;
+export default BtnGoCreate;

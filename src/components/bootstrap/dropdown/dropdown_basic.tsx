@@ -17,33 +17,47 @@ type OnSelectionChange = ((keys: Selection) => any) | undefined;
 interface Props {
   list: string[];
   selected: string;
+  size?: "sm" | "md" | "lg";
   setSelected: (value: string) => void;
 }
 
-const DropdownBasic: React.FC<Props> = ({ list, selected, setSelected }) => {
+const DropdownBasic: React.FC<Props> = ({
+  list,
+  selected,
+  size,
+  setSelected,
+}) => {
   const changeHandler: OnSelectionChange = (keys: Selection) => {
-    if (keys instanceof Set) {
+    if (keys instanceof Set && keys?.values().next().value !== undefined) {
       setSelected(keys?.values().next().value);
     }
   };
 
   return (
-    <Dropdown>
-      <DropdownTrigger className="w-[7.75rem]">
+    <Dropdown
+      classNames={{
+        trigger: ["w-[7.75rem]"],
+        content: ["min-w-[7.75rem]"],
+      }}
+    >
+      <DropdownTrigger className={`w-[7.75rem] ${size === "sm" && "h-[2rem]"}`}>
         <BtnBasic bordered="default" className="flex justify-between">
           <p className="text-layout_black">{selected}</p>
           <ICON.chevronDown />
         </BtnBasic>
       </DropdownTrigger>
       <DropdownMenu
+        classNames={{
+          list: ["max-h-40 overflow-scroll"],
+          base: ["w-[7.75rem]"],
+        }}
         aria-label="Static Actions"
         selectionMode="single"
         selectedKeys={[selected]}
         onSelectionChange={changeHandler}
-        className="max-h-40 overflow-scroll"
       >
         {list.map((item) => (
-          <DropdownItem key={item} value={item}>
+          <DropdownItem key={item} value={item} classNames={{}}>
             <p className="text-layout_black">{item}</p>
           </DropdownItem>
         ))}

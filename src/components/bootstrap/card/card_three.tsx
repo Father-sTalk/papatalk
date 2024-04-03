@@ -4,8 +4,7 @@ import { Avatar } from "@nextui-org/react";
 
 import { dateToString } from "@/utils/formatter/dateToString";
 
-import BtnEmpathy from "../button/btn_empathy";
-import BtnIcon from "../button/btn_icon";
+import CardViewLike from "./card_view_like";
 interface Props {
   card: {
     user: {
@@ -16,8 +15,8 @@ interface Props {
     title: string;
     content: string;
     view: number;
-    empathy: number;
-    empathied: boolean;
+    like: number;
+    liked: boolean;
     createdAt: string;
   };
 }
@@ -41,10 +40,7 @@ const CardThree: React.FC<Props> = ({ card }) => {
           {card?.content}
         </span>
       </div>
-      <div className="flex gap-sm">
-        <BtnIcon icon="eye" text={card?.view.toString()} />
-        <BtnEmpathy count={card?.empathy} empathied={card?.empathied} />
-      </div>
+      <CardViewLike views={card?.view} likes={card?.like} liked={card?.liked} />
     </article>
   );
 };

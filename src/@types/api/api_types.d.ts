@@ -27,10 +27,14 @@ namespace ApiRequest {
     interface GetPopularCommunityListRequest {
       category?: string;
     }
+    interface GetArticleRequest {
+      id: string;
+    }
     interface CreateArticleRequest {
       title: string;
       content: string;
       category: string;
+      images: File[];
     }
   }
   namespace SosApiTypes {
@@ -38,6 +42,24 @@ namespace ApiRequest {
       search?: string;
       page: number;
       sort?: string;
+    }
+  }
+  namespace CommentApiTypes {
+    interface GetCommentListRequest {
+      contentsType: ContentsType;
+      contentsId: number;
+      sort?: string;
+      page?: number;
+    }
+    interface CreateCommentRequest {
+      contentsType: ContentsType;
+      contentsId: number;
+      content: string;
+    }
+    interface PostCommentRecommend {
+      contentsType: ContentsType;
+      contentsId: number;
+      commentId: number;
     }
   }
 }
@@ -61,6 +83,16 @@ interface SosArticle {
   likes: number;
   commentsCount: number;
   createdAt: string;
+}
+interface CommentItem {
+  id: number;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  likes: number;
+  liked: boolean;
+  authorId: number;
+  authorNickname: string;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -93,10 +125,32 @@ namespace ApiResponse {
     interface PopularCommunityArticleListResponse {
       communityList: PopularCommunityArticle[];
     }
+    interface CommunityArticleResponse {
+      id: number;
+      title: string;
+      content: string;
+      category: string;
+      images: string[];
+      views: number;
+      likes: number;
+      liked: boolean;
+      authorId: number;
+      authorNickname: string;
+      authorProfileImage: string;
+      createdAt: string;
+    }
   }
   namespace SosApiTypes {
     interface SosArticleListResponse {
       sosList: SosArticle[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+  }
+  namespace CommentApiTypes {
+    interface CommentListResponse {
+      commentList: CommentItem[];
       totalCount: number;
       totalPage: number;
       currentPage: number;
