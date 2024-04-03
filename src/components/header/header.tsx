@@ -36,7 +36,7 @@ const Header = () => {
         <section>
           {profileImage ? (
             <div className="flex gap-[0.5rem] items-center">
-              <Avatar src={profileImage} alt="profile_image" />
+              <Avatar src={profileImage} alt="profile_image" size="sm" />
               <ICON.chevronDown size={{ width: 20, height: 20 }} />
             </div>
           ) : (

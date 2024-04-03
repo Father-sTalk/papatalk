@@ -6,7 +6,7 @@ interface MenuItem {
   path: string;
   icon: string;
 }
-type CommunityTabs = "all" | "free";
+type CommunityTabs = "all" | "free" | "pregnancy" | "childcare";
 type SosTabs = "all" | "wait" | "solved";
 type ContentsType = "community" | "sos";
 namespace Enums {
@@ -18,5 +18,11 @@ namespace Enums {
     default = "default",
     hover = "hover",
     disabled = "disabled",
+  }
+  enum CommunityTabs {
+    all = "all",
+    free = "free",
+    pregnancy = "pregnancy",
+    childcare = "childcare",
   }
 }

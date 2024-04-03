@@ -7,7 +7,7 @@ const useGetPopularCommunityList = (
   query: ApiRequest.CommunityApiTypes.GetPopularCommunityListRequest,
 ) => {
   return useQuery({
-    queryKey: [queryKey.POPULAR_CATEGORY_LIST, query],
+    queryKey: [queryKey.POPULAR_COMMUNITY_LIST, query],
     queryFn: () =>
       communityAPI.getPopularCommunityList(query).then((res) => res.data),
   });

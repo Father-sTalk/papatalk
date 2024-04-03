@@ -7,7 +7,7 @@ const useGetCommunityArticle = (
   path: ApiRequest.CommunityApiTypes.GetArticleRequest,
 ) => {
   return useQuery({
-    queryKey: [queryKey.CATEGORY_ARTICLE, path],
+    queryKey: [queryKey.COMMUNITY_ARTICLE, path],
     queryFn: () =>
       communityAPI.getCommunityArticle(path).then((res) => res.data),
   });

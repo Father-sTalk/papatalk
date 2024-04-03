@@ -47,13 +47,19 @@ namespace ApiRequest {
   namespace CommentApiTypes {
     interface GetCommentListRequest {
       contentsType: ContentsType;
-      contentsId: string;
+      contentsId: number;
       sort?: string;
       page?: number;
     }
     interface CreateCommentRequest {
-      articleId: string;
+      contentsType: ContentsType;
+      contentsId: number;
       content: string;
+    }
+    interface PostCommentRecommend {
+      contentsType: ContentsType;
+      contentsId: number;
+      commentId: number;
     }
   }
 }
@@ -77,6 +83,16 @@ interface SosArticle {
   likes: number;
   commentsCount: number;
   createdAt: string;
+}
+interface CommentItem {
+  id: number;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  likes: number;
+  liked: boolean;
+  authorId: number;
+  authorNickname: string;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -127,6 +143,14 @@ namespace ApiResponse {
   namespace SosApiTypes {
     interface SosArticleListResponse {
       sosList: SosArticle[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+  }
+  namespace CommentApiTypes {
+    interface CommentListResponse {
+      commentList: CommentItem[];
       totalCount: number;
       totalPage: number;
       currentPage: number;

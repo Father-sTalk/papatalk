@@ -1,6 +1,7 @@
 export const queryKey = {
-  CATEGORY_LIST: "categoryList",
-  CATEGORY_ARTICLE: "categoryArticle",
-  POPULAR_CATEGORY_LIST: "popularCategoryList",
+  COMMUNITY_LIST: "communityList",
+  COMMUNITY_ARTICLE: "communityArticle",
+  POPULAR_COMMUNITY_LIST: "popularCommunityList",
   SOS_LIST: "sosList",
+  COMMENTLIST: "commentList",
 };

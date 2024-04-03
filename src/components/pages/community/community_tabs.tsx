@@ -1,24 +1,18 @@
 import React from "react";
 
 import { BtnBasic } from "@/components/bootstrap/button/btn_basic";
+import { communityTabs } from "@/constants/menu";
 import { useCommunityTabStore } from "@/store/store_community_tab";
-interface Tab {
-  text: string;
-  value: CommunityTabs;
-}
-const tabs: Tab[] = [
-  { text: "전체", value: "all" },
-  { text: "자유게시판", value: "free" },
-];
 
 const CommunityTabs: React.FC = () => {
   const { currentTab, setTab } = useCommunityTabStore();
 
   return (
     <div className="flex gap-2">
-      {tabs.map((tab) => (
+      {communityTabs.map((tab) => (
         <BtnBasic
           key={tab.value}
+          role="tab"
           size="sm"
           variant={currentTab === tab.value ? "solid" : "bordered"}
           bordered={currentTab !== tab.value ? "default" : undefined}

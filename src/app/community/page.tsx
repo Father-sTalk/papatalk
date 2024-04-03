@@ -8,10 +8,13 @@ import CardListPopular from "@/components/bootstrap/card_list/one/cardlist_one_p
 import DropdownBasic from "@/components/bootstrap/dropdown/dropdown_basic";
 import InputSearch from "@/components/bootstrap/input/input_search";
 import ListBasic from "@/components/bootstrap/list/list_basic";
-import BtnCreate from "@/components/feature/button/btn_create";
+import BtnGoCreate from "@/components/feature/button/btn_go_create";
 import CommunityTabs from "@/components/pages/community/community_tabs";
+import { queryKey } from "@/constants/queryKey";
 import useGetCommunityList from "@/models/hooks/community/get_communityList.hooks";
 import useGetPopularCommunityList from "@/models/hooks/community/get_popularCategoryList.hooks";
+import { useCommunityTabStore } from "@/store/store_community_tab";
+import queryController from "@/utils/query/controller_query";
 
 const CommunityPage = () => {
   const [search, setSearch] = React.useState<string>("");
@@ -20,15 +23,23 @@ const CommunityPage = () => {
   const [sort, setSort] = React.useState<string>("최신 순");
   const [page, setPage] = React.useState<number>(1);
 
+  const { currentTab } = useCommunityTabStore();
+
   const { data: popularData, isLoading: popularIsLoading } =
     useGetPopularCommunityList({});
-  const { data, isLoading } = useGetCommunityList({ page, search });
+  const { data, isLoading } = useGetCommunityList({
+    page,
+    search,
+    sort: currentTab,
+  });
+  const onEnter = () => {
+    queryController.invalidateQueries(queryKey.COMMUNITY_LIST);
+    setPage(1);
+    setSearch(searchValue);
+  };
   if (isLoading || popularIsLoading) {
     return <div>Loading...</div>;
   }
-  const onEnter = () => {
-    setSearch(searchValue);
-  };
   return (
     <section className="flex flex-col gap-8 p-6">
       <CardListPopular cardList={popularData?.communityList} />
@@ -38,7 +49,7 @@ const CommunityPage = () => {
             <ICON.message color="black" />
             <p className="text-h4">커뮤니티 모든 글</p>
           </div>
-          <BtnCreate />
+          <BtnGoCreate />
         </div>
         <div className="flex flex-row justify-between">
           <CommunityTabs />

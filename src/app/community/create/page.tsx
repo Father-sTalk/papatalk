@@ -50,13 +50,16 @@ const CommunityCreatePage: React.FC = () => {
           />
         </div>
         <div className="flex flex-col px-6">
-          <TextareaBasic
-            value={content}
-            onChange={setContent}
-            placeholder="내용을 입력해 주십시오."
-            rows={12}
-            className="h-full resize-none border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-950"
-          />
+          <div className="flex flex-col">
+            <label className="text-sm text-gray-600 mb-2">내 용</label>
+            <TextareaBasic
+              value={content}
+              onChange={setContent}
+              placeholder="내용을 입력해 주십시오."
+              rows={12}
+              className="h-full resize-none border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-950"
+            />
+          </div>
           <div className="flex flex-row justify-between py-6">
             <InputFile
               onFileChange={(file) => {

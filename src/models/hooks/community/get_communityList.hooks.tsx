@@ -7,7 +7,7 @@ const useGetCommunityList = (
   query: ApiRequest.CommunityApiTypes.GetArticleListRequest,
 ) => {
   return useQuery({
-    queryKey: [queryKey.CATEGORY_LIST, query],
+    queryKey: [queryKey.COMMUNITY_LIST, query],
     queryFn: () => communityAPI.getCommunityList(query).then((res) => res.data),
   });
 };
