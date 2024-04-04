@@ -6,6 +6,15 @@ interface MenuItem {
   path: string;
   icon: string;
 }
+type NextuiColor =
+  | "none"
+  | "primary"
+  | "secondary"
+  | "default"
+  | "success"
+  | "warning"
+  | "danger"
+  | undefined;
 type CommunityTabs = "all" | "free" | "pregnancy" | "childcare";
 type SosTabs = "all" | "wait" | "solved";
 type ContentsType = "community" | "sos";
