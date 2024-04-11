@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ICON } from "@/assets/icon";
-import { MenuGroup, MENU } from "@/constants/menu";
+import { menuGroup, MENU, profileMenu } from "@/constants/menu";
+import { useMypageSideStore } from "@/store/store_mypage_side";
 import useUserStore from "@/store/store_user";
 
 import { BtnBasic } from "../bootstrap/button/btn_basic";
@@ -14,6 +15,8 @@ interface MenuProps {
   menu: MenuItem;
 }
 const Header = () => {
+  const [dropdown, setDropdown] = React.useState<boolean>(false);
+  const { setSubMenu } = useMypageSideStore();
   const { profileImage } = useUserStore();
   return (
     <header className="text-gray-600 body-font w-full border-b-small border-default-200">
@@ -28,16 +31,35 @@ const Header = () => {
             />
           </Link>
           <nav className="flex gap-[0.5rem]">
-            {MenuGroup.main.map((menu) => (
+            {menuGroup.main.map((menu) => (
               <HeaderLink menu={menu} key={menu.path} />
             ))}
           </nav>
         </div>
         <section>
           {profileImage ? (
-            <div className="flex gap-[0.5rem] items-center">
+            <div
+              role="button"
+              className="relative flex gap-[0.5rem] items-center"
+              onClick={() => setDropdown((prev) => !prev)}
+            >
               <Avatar src={profileImage} alt="profile_image" size="sm" />
               <ICON.chevronDown size={{ width: 20, height: 20 }} />
+              {dropdown && (
+                <div className="w-[6.5rem] absolute bottom-0 transform translate-y-full -translate-x-1/3 bg-default-50 rounded-md border border-default-300">
+                  {profileMenu.map((menu) => (
+                    <Link
+                      key={menu.text}
+                      href={MENU.mypage.path}
+                      onClick={() => setSubMenu(menu.value, menu.subMenu)}
+                    >
+                      <div className="w-full text-center text-button p-2 hover:text-primary-500">
+                        {menu.text}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
             <div className="flex gap-2">

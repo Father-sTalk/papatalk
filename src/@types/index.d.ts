@@ -6,6 +6,29 @@ interface MenuItem {
   path: string;
   icon: string;
 }
+type MenuKeys =
+  | "home"
+  | "about"
+  | "community"
+  | "sos"
+  | "login"
+  | "register"
+  | "mypage";
+type MenuList = Record<MenuKeys, MenuItem>;
+interface Tab {
+  text: string;
+}
+interface CommunityTab extends Tab {
+  value: CommunityTabsEnum;
+}
+interface MypageSubTab extends Tab {
+  value: MypageSideMenuEnum;
+  subMenu: MypageSideMenuEnum;
+}
+interface MypageTab extends Tab {
+  value?: MypageSideMenuEnum;
+  subMenu?: MypageSubTab[];
+}
 type NextuiColor =
   | "none"
   | "primary"
@@ -15,9 +38,7 @@ type NextuiColor =
   | "warning"
   | "danger"
   | undefined;
-type CommunityTabs = "all" | "free" | "pregnancy" | "childcare";
-type SosTabs = "all" | "wait" | "solved";
-type ContentsType = "community" | "sos";
+
 namespace Enums {
   enum ConfirmType {
     Agree = true,
@@ -34,4 +55,16 @@ namespace Enums {
     pregnancy = "pregnancy",
     childcare = "childcare",
   }
+  enum MypageSideMenu {
+    profile = "profile",
+    article = "article",
+    baby = "baby",
+  }
+  enum ContentsType {
+    community = "community",
+    sos = "sos",
+  }
 }
+type CommunityTabs = Enums.CommunityTabs;
+type MypageSideMenu = Enums.MypageSideMenu;
+type ContentsType = Enums.ContentsType;

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Input } from "@nextui-org/react";
 
-import { GenderType } from "@/@types/enum/enums";
+import { GenderTypeEnum } from "@/@types/enum/enums";
 import { useModalStore } from "@/store/store_modal";
 
 import { BtnBasic } from "../bootstrap/button/btn_basic";
@@ -14,9 +14,8 @@ interface Props {
 const CardChildInfo: React.FC<Props> = ({ mode }) => {
   const { closeModal } = useModalStore();
 
-  const [checkedGender, setCheckedGender] = React.useState<GenderType | null>(
-    null,
-  );
+  const [checkedGender, setCheckedGender] =
+    React.useState<GenderTypeEnum | null>(null);
   const [height, setHeight] = React.useState<string>("");
   const [weight, setWeight] = React.useState<string>("");
   const [date, setDate] = React.useState<string>("2024-01-01");
@@ -31,14 +30,14 @@ const CardChildInfo: React.FC<Props> = ({ mode }) => {
           <label className="text-subtitle2">성별</label>
           <div className="flex flex-row gap-6">
             <CheckBoxBasic
-              checked={checkedGender === GenderType.male}
+              checked={checkedGender === GenderTypeEnum.male}
               text="남자"
-              onClickList={() => setCheckedGender(GenderType.male)}
+              onClickList={() => setCheckedGender(GenderTypeEnum.male)}
             />
             <CheckBoxBasic
-              checked={checkedGender === GenderType.female}
+              checked={checkedGender === GenderTypeEnum.female}
               text="여자"
-              onClickList={() => setCheckedGender(GenderType.female)}
+              onClickList={() => setCheckedGender(GenderTypeEnum.female)}
             />
           </div>
           <div>
