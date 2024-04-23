@@ -1,5 +1,39 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
+enum ButtonTypeEnum {
+  default = "default",
+  hover = "hover",
+  disabled = "disabled",
+}
+enum GenderTypeEnum {
+  male = "male",
+  female = "female",
+}
+enum ConfirmTypeEnum {
+  agree = 1,
+  disagree = 0,
+}
+enum CommunityTabsEnum {
+  all = "all",
+  free = "free",
+  pregnancy = "pregnancy",
+  childcare = "childcare",
+}
+enum MypageSideMenuEnum {
+  profile = "profile",
+  article = "article",
+  myarticle = "myarticle",
+  otherarticle = "otherarticle",
+  baby = "baby",
+}
+enum ContentsTypeEnum {
+  community = "community",
+  sos = "sos",
+}
+enum SosTabsEnum {
+  all = "all",
+  wait = "wait",
+  solved = "solved",
+}
 namespace ApiRequest {
   namespace AuthApiTypes {
     interface LoginRequest {
@@ -16,6 +50,9 @@ namespace ApiRequest {
     interface DuplicationCheckRequest {
       email?: string;
       nickname?: string;
+    }
+    interface ResetPasswordRequest {
+      email: string;
     }
   }
   namespace CommunityApiTypes {
@@ -46,18 +83,18 @@ namespace ApiRequest {
   }
   namespace CommentApiTypes {
     interface GetCommentListRequest {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       sort?: string;
       page?: number;
     }
     interface CreateCommentRequest {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       content: string;
     }
     interface PostCommentRecommend {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       commentId: number;
     }

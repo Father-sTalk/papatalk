@@ -3,7 +3,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 interface Props {
   value: string;
-  plackholder: string;
+  placeholder: string;
   label: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   validation?: boolean;
@@ -12,7 +12,7 @@ interface Props {
 }
 const InputWithLabel: React.FC<Props> = ({
   value,
-  plackholder,
+  placeholder: plackholder,
   label,
   setValue,
   validation,

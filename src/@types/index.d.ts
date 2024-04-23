@@ -38,33 +38,3 @@ type NextuiColor =
   | "warning"
   | "danger"
   | undefined;
-
-namespace Enums {
-  enum ConfirmType {
-    Agree = true,
-    Disagree = false,
-  }
-  enum ButtonType {
-    default = "default",
-    hover = "hover",
-    disabled = "disabled",
-  }
-  enum CommunityTabs {
-    all = "all",
-    free = "free",
-    pregnancy = "pregnancy",
-    childcare = "childcare",
-  }
-  enum MypageSideMenu {
-    profile = "profile",
-    article = "article",
-    baby = "baby",
-  }
-  enum ContentsType {
-    community = "community",
-    sos = "sos",
-  }
-}
-type CommunityTabs = Enums.CommunityTabs;
-type MypageSideMenu = Enums.MypageSideMenu;
-type ContentsType = Enums.ContentsType;

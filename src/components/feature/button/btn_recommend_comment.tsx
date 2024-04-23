@@ -5,7 +5,7 @@ import useCommentRecommendMutation from "@/models/hooks/comment/post_comment_rec
 
 interface Props {
   isRecommend: boolean;
-  contentsType: ContentsType;
+  contentsType: ContentsTypeEnum;
   contentsId: number;
   commentId: number;
 }

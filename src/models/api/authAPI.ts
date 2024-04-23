@@ -23,5 +23,8 @@ const authAPI = {
       "/auth/refresh",
     );
   },
+  resetPassword: (data: ApiRequest.AuthApiTypes.ResetPasswordRequest) => {
+    return apiInstance.post("/auth/reset-password", data);
+  },
 };
 export default authAPI;

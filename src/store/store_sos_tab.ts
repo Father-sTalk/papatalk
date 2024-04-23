@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 interface SosTabState {
-  currentTab: SosTabs;
-  setTab: (tab: SosTabs) => void;
+  currentTab: SosTabsEnum;
+  setTab: (tab: SosTabsEnum) => void;
 }
 
 export const useSosTabStore = create<SosTabState>((set) => ({
-  currentTab: "all",
+  currentTab: SosTabsEnum.all,
   setTab: (tab) => set({ currentTab: tab }),
 }));

@@ -2,6 +2,8 @@
 import React from "react";
 
 import { MypageSideMenuEnum } from "@/@types/enum/enums";
+import MypageMyArticle from "@/components/pages/mypage/mypage_my_article";
+import MypageProfile from "@/components/pages/mypage/mypage_profile";
 import { useMypageSideStore } from "@/store/store_mypage_side";
 
 const Mypage = () => {
@@ -13,11 +15,11 @@ const Mypage = () => {
   }, [setSubMenu]);
 
   if (currentTab === MypageSideMenuEnum.profile) {
-    return <div>Profile</div>;
+    return <MypageProfile />;
   }
   if (currentTab === MypageSideMenuEnum.article) {
     if (currentSubMenu === MypageSideMenuEnum.myarticle) {
-      return <div>My Article</div>;
+      return <MypageMyArticle />;
     }
     if (currentSubMenu === MypageSideMenuEnum.otherarticle) {
       return <div>Other Article</div>;

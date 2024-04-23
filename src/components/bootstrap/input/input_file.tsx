@@ -5,10 +5,11 @@ import { BtnBasic } from "../button/btn_basic";
 interface Props {
   size?: "sm" | "md" | "lg";
   color?: "primary" | "secondary" | "default";
+  text?: string;
   onFileChange: (file: File | null) => void;
 }
 
-const InputFile: React.FC<Props> = ({ size, color, onFileChange }) => {
+const InputFile: React.FC<Props> = ({ size, color, text, onFileChange }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const handleButtonClick = () => {
     fileInputRef.current?.click();
@@ -16,6 +17,7 @@ const InputFile: React.FC<Props> = ({ size, color, onFileChange }) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onFileChange(e.target.files?.[0] || null);
   };
+  const buttonText = text || "이미지 선택";
   return (
     <div>
       <input
@@ -26,7 +28,7 @@ const InputFile: React.FC<Props> = ({ size, color, onFileChange }) => {
         onChange={handleFileChange}
       />
       <BtnBasic onClick={handleButtonClick} color={color} size={size}>
-        이미지 선택
+        {buttonText}
       </BtnBasic>
     </div>
   );

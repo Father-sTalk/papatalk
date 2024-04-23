@@ -51,7 +51,11 @@ const Header = () => {
                     <Link
                       key={menu.text}
                       href={MENU.mypage.path}
-                      onClick={() => setSubMenu(menu.value, menu.subMenu)}
+                      onClick={() => {
+                        if (menu.subMenu && !Array.isArray(menu.subMenu)) {
+                          setSubMenu(menu.value, menu.subMenu);
+                        }
+                      }}
                     >
                       <div className="w-full text-center text-button p-2 hover:text-primary-500">
                         {menu.text}

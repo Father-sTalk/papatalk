@@ -5,7 +5,7 @@ import { Avatar } from "@nextui-org/react";
 import BtnRecommendComment from "@/components/feature/button/btn_recommend_comment";
 import { dateToString } from "@/utils/formatter/dateToString";
 interface Props {
-  contentsType: ContentsType;
+  contentsType: ContentsTypeEnum;
   contentsId: number;
   comment: CommentItem;
 }

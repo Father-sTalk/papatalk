@@ -12,7 +12,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   React.useEffect(() => {
     mutate();
     initialize();
-  }, [initialize]);
+  }, [initialize, mutate]);
   return <React.Fragment>{children}</React.Fragment>;
 };
 

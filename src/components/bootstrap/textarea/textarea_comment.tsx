@@ -5,7 +5,7 @@ import BtnCreateComment from "@/components/feature/button/btn_create_comment";
 
 import TextareaBasic from "./textarea_basic";
 interface Props {
-  contentType: ContentsType;
+  contentType: ContentsTypeEnum;
   contentId: number;
   value: string;
   onChange: React.Dispatch<React.SetStateAction<string>>;

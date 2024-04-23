@@ -2,7 +2,6 @@ import React from "react";
 
 import { Input } from "@nextui-org/react";
 
-import { GenderTypeEnum } from "@/@types/enum/enums";
 import { useModalStore } from "@/store/store_modal";
 
 import { BtnBasic } from "../bootstrap/button/btn_basic";

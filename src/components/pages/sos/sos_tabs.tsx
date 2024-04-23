@@ -3,12 +3,12 @@ import React from "react";
 import { useSosTabStore } from "@/store/store_sos_tab";
 interface Tab {
   text: string;
-  value: SosTabs;
+  value: SosTabsEnum;
 }
 const tabs: Tab[] = [
-  { text: "전체", value: "all" },
-  { text: "답변을 기다리는 질문", value: "wait" },
-  { text: "해결된 질문", value: "solved" },
+  { text: "전체", value: SosTabsEnum.all },
+  { text: "답변을 기다리는 질문", value: SosTabsEnum.wait },
+  { text: "해결된 질문", value: SosTabsEnum.solved },
 ];
 
 const SosTabs: React.FC = () => {

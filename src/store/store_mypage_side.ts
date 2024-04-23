@@ -5,9 +5,9 @@ import { MypageSideMenuEnum } from "@/@types/enum/enums";
 interface MypageSideState {
   currentTab: MypageSideMenuEnum;
   currentSubMenu?: MypageSideMenuEnum;
-  setMenu: (tab: MypageSideMenuEnum) => void;
+  setMenu: (tab: MypageSideMenuEnum | undefined) => void;
   setSubMenu: (
-    tab: MypageSideMenuEnum,
+    tab: MypageSideMenuEnum | undefined,
     subTab: MypageSideMenuEnum | undefined,
   ) => void;
 }

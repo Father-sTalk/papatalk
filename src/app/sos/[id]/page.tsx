@@ -14,7 +14,7 @@ const CommunityDetailPage: React.FC<Props> = ({ params }) => {
     <article className="w-full py-6">
       <CommunityDetail id={articleId} />
       <CardlistComment
-        contentsType={Enums.ContentsType.community}
+        contentsType={ContentsTypeEnum.community}
         contentsId={Number(articleId)}
       />
     </article>

@@ -1,5 +1,6 @@
 import React from "react";
 
+import { ContentsTypeEnum } from "@/@types/enum/enums";
 import CardlistComment from "@/components/bootstrap/card_list/ comment/cardlist_comment";
 import CommunityDetail from "@/components/pages/community/community_detail";
 
@@ -14,7 +15,7 @@ const CommunityDetailPage: React.FC<Props> = ({ params }) => {
     <article className="w-full py-6">
       <CommunityDetail id={articleId} />
       <CardlistComment
-        contentsType={Enums.ContentsType.community}
+        contentsType={ContentsTypeEnum.community}
         contentsId={Number(articleId)}
       />
     </article>

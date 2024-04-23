@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 import { useModalStore } from "@/store/store_modal";
 
-const Modal = () => {
+const ModalContainer = () => {
   const { Component, closeModal } = useModalStore();
   const modalContentRef = React.useRef<HTMLDivElement>(null);
 
@@ -52,4 +52,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default ModalContainer;
