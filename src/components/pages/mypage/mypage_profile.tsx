@@ -10,22 +10,23 @@ import BtnDuplicationCheck from "@/components/feature/button/btn_duplicationChec
 import CardConfirmEmail from "@/components/modal/card_confirm_email";
 import CardDeleteUser from "@/components/modal/card_delete_user";
 import { useModalStore } from "@/store/store_modal";
+import useUserStore from "@/store/store_user";
 const MypageProfile = () => {
-  const [nickname, setNickname] = React.useState<string>("");
+  const [newNickname, setNickname] = React.useState<string>("");
   const [isNicknameUnique, setNicknameUnique] = React.useState<boolean>(false);
   const [image, setImage] = React.useState<File | null>(null);
 
   const { openModal } = useModalStore();
+  const { nickname, profileImage } = useUserStore();
   const openChangePasswordModal = () => {
     openModal(<CardConfirmEmail />);
   };
   const openDeleteModal = () => {
     openModal(<CardDeleteUser />);
   };
-
-  // TODO:: 기존 이미지랑 비교, 다른지
-  const isvalide = (nickname !== "" && isNicknameUnique) || image;
+  const isvalide = (newNickname !== "" && isNicknameUnique) || image;
   const style = isvalide ? "primary" : "default";
+  const renderImage = image ? URL.createObjectURL(image) : profileImage;
   return (
     <div className="w-full h-full flex flex-row justify-center items-center">
       <CardWhite>
@@ -35,13 +36,13 @@ const MypageProfile = () => {
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-row items-center gap-4">
                 <Avatar
-                  src={image ? URL.createObjectURL(image) : ""}
-                  name="보라네 아빠"
+                  src={renderImage ?? ""}
+                  name={nickname ?? ""}
                   size="lg"
                   color="secondary"
                 />
                 <span className="text-subtitle2 text-layout_black">
-                  보라네 아빠
+                  {nickname}
                 </span>
               </div>
               <InputFile
@@ -57,13 +58,13 @@ const MypageProfile = () => {
               <Input
                 type="text"
                 label="닉네임"
-                value={nickname}
+                value={newNickname}
                 variant="bordered"
                 onChange={(e) => setNickname(e.target.value)}
-                isInvalid={nickname !== "" && !isNicknameUnique}
-                color={nickname && !isNicknameUnique ? "danger" : "default"}
+                isInvalid={newNickname !== "" && !isNicknameUnique}
+                color={newNickname && !isNicknameUnique ? "danger" : "default"}
                 errorMessage={
-                  nickname && !isNicknameUnique
+                  newNickname && !isNicknameUnique
                     ? "닉네임 중복 여부를 확인해주세요."
                     : "\u00A0"
                 }
@@ -73,7 +74,7 @@ const MypageProfile = () => {
               />
               <div className="pb-6">
                 <BtnDuplicationCheck
-                  query={{ nickname }}
+                  query={{ nickname: newNickname }}
                   onCheckResult={setNicknameUnique}
                 />
               </div>

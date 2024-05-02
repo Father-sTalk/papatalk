@@ -4,4 +4,5 @@ export const queryKey = {
   POPULAR_COMMUNITY_LIST: "popularCommunityList",
   SOS_LIST: "sosList",
   COMMENTLIST: "commentList",
+  PROFILE: "profile",
 };

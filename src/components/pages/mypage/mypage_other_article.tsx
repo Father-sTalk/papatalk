@@ -42,7 +42,7 @@ const data: ApiResponse.UsersApiTypes.MyArticleResponse = {
   totalPage: 1,
   currentPage: 1,
 };
-const MypageMyArticle = () => {
+const MypageOtherArticle = () => {
   const [page, setPage] = React.useState<number>(1);
   //TODO:: api 연결하면서 contentsType 변경
   const { currentTab } = useMypageArticleTabStore();
@@ -74,4 +74,4 @@ const MypageMyArticle = () => {
   );
 };
 
-export default MypageMyArticle;
+export default MypageOtherArticle;

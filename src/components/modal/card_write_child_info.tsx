@@ -2,6 +2,7 @@ import React from "react";
 
 import { Input } from "@nextui-org/react";
 
+import { GenderTypeEnum } from "@/@types/enum/enums";
 import { useModalStore } from "@/store/store_modal";
 
 import { BtnBasic } from "../bootstrap/button/btn_basic";
@@ -20,10 +21,17 @@ const CardChildInfo: React.FC<Props> = ({ mode }) => {
   const [date, setDate] = React.useState<string>("2024-01-01");
   return (
     <div className="w-full flex flex-col gap-6">
-      <div className="flex flex-col gap-4 text-h4">
-        <p>파파야, 환영합니다 🤗</p>
-        <p>우리 아기 성장을 기록해 보세요.</p>
-      </div>
+      {mode !== "change" && (
+        <div className="flex flex-col gap-4 text-h4">
+          <p>파파야, 환영합니다 🤗</p>
+          <p>우리 아기 성장을 기록해 보세요.</p>
+        </div>
+      )}
+      {mode === "change" && (
+        <div className="flex flex-col gap-4 text-h4">
+          <p>나의 아기 정보</p>
+        </div>
+      )}
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label className="text-subtitle2">성별</label>

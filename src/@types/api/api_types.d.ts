@@ -26,6 +26,7 @@ enum MypageSideMenuEnum {
   baby = "baby",
 }
 enum ContentsTypeEnum {
+  all = "all",
   community = "community",
   sos = "sos",
 }
@@ -100,26 +101,23 @@ namespace ApiRequest {
     }
   }
 }
-interface CommunityArticle {
+interface Article {
   id: number;
   title: string;
   views: number;
   likes: number;
   createdAt: string;
-  category: string;
   authorNickname: string;
+}
+interface CommunityArticle extends Article {
+  category: string;
 }
 interface PopularCommunityArticle extends CommunityArticle {
   thumbnail: string;
 }
-interface SosArticle {
-  id: number;
-  title: string;
+interface SosArticle extends Article {
   content: string;
-  views: number;
-  likes: number;
   commentsCount: number;
-  createdAt: string;
 }
 interface CommentItem {
   id: number;
@@ -130,6 +128,10 @@ interface CommentItem {
   liked: boolean;
   authorId: number;
   authorNickname: string;
+}
+
+interface MyContents extends Article {
+  contentsType: ContentsTypeEnum;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -188,6 +190,19 @@ namespace ApiResponse {
   namespace CommentApiTypes {
     interface CommentListResponse {
       commentList: CommentItem[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+  }
+  namespace UsersApiTypes {
+    interface ProfileResponse {
+      email: string;
+      nickname: string;
+      profileImage: string;
+    }
+    interface MyArticleResponse {
+      contentsList: MyContents[];
       totalCount: number;
       totalPage: number;
       currentPage: number;

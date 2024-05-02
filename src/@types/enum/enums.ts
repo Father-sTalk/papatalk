@@ -27,6 +27,7 @@ export enum MypageSideMenuEnum {
 }
 
 export enum ContentsTypeEnum {
+  all = "all",
   community = "community",
   sos = "sos",
 }

@@ -21,6 +21,9 @@ interface Tab {
 interface CommunityTab extends Tab {
   value: CommunityTabsEnum;
 }
+interface MypageArticleTab extends Tab {
+  value: ContentsTypeEnum;
+}
 interface MypageSubTab extends Tab {
   value: MypageSideMenuEnum;
   subMenu: MypageSideMenuEnum;

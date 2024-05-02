@@ -2,7 +2,9 @@
 import React from "react";
 
 import { MypageSideMenuEnum } from "@/@types/enum/enums";
+import MypageBabyInfo from "@/components/pages/mypage/mypage_baby_info";
 import MypageMyArticle from "@/components/pages/mypage/mypage_my_article";
+import MypageOtherArticle from "@/components/pages/mypage/mypage_other_article";
 import MypageProfile from "@/components/pages/mypage/mypage_profile";
 import { useMypageSideStore } from "@/store/store_mypage_side";
 
@@ -22,11 +24,11 @@ const Mypage = () => {
       return <MypageMyArticle />;
     }
     if (currentSubMenu === MypageSideMenuEnum.otherarticle) {
-      return <div>Other Article</div>;
+      return <MypageOtherArticle />;
     }
   }
   if (currentTab === MypageSideMenuEnum.baby) {
-    return <div>Baby</div>;
+    return <MypageBabyInfo />;
   }
 };
 

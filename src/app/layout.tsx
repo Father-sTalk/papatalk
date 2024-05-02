@@ -1,5 +1,6 @@
 import React from "react";
 
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 
 import SettingProvider from "@/provider/setting_provider";
@@ -18,6 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="w-full">
         <SettingProvider>{children}</SettingProvider>
+        <GoogleAnalytics gaId="G-1SV9RGHV5R" />
+        <GoogleTagManager gtmId="GTM-PGG9KH6L" />
       </body>
     </html>
   );

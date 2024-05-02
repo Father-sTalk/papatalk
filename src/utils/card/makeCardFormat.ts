@@ -20,6 +20,7 @@ export const makeCardFormat = {
         likes: article.likes,
         commentsCount: article.commentsCount,
         createdAt: article.createdAt,
+        authorNickname: article.authorNickname,
         id: article.id,
       };
     });
