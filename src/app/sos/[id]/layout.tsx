@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CommunityArticleLayout({
+export default function SosArticleLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -1,5 +1,6 @@
 import React from "react";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -22,6 +23,7 @@ const LandingImage: React.FC<Props> = ({
   const router = useRouter();
   const handleButtonClick = () => {
     router.push(MENU[buttonLink].path);
+    sendGAEvent({ event: "button_click", value: "home_image_detail" });
   };
   return (
     <article className="flex justify-between items-center w-full h-[18.375rem] px-[1.5rem] pt-[2.5rem] bg-primary-50">

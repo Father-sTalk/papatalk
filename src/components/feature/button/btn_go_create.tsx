@@ -4,8 +4,10 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { ICON } from "@/assets/icon";
 import { BtnBasic } from "@/components/bootstrap/button/btn_basic";
-
-const BtnGoCreate = () => {
+interface Props {
+  color?: NextuiColor;
+}
+const BtnGoCreate: React.FC<Props> = ({ color = "primary" }) => {
   const pathname = usePathname();
   const router = useRouter();
   const goToCreate = () => {
@@ -14,12 +16,12 @@ const BtnGoCreate = () => {
   return (
     <BtnBasic
       size="md"
-      color="primary"
+      color={color}
       startContent={<ICON.pencil color="white" />}
       className="w-[9.375rem]"
       onClick={goToCreate}
     >
-      글쓰기
+      <span className="text-menu">글쓰기</span>
     </BtnBasic>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ContentsTypeEnum } from "@/@types/enum/enums";
 import CardlistComment from "@/components/bootstrap/card_list/ comment/cardlist_comment";
 import CommunityDetail from "@/components/pages/community/community_detail";
 

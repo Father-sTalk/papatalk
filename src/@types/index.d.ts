@@ -6,23 +6,38 @@ interface MenuItem {
   path: string;
   icon: string;
 }
-type CommunityTabs = "all" | "free" | "pregnancy" | "childcare";
-type SosTabs = "all" | "wait" | "solved";
-type ContentsType = "community" | "sos";
-namespace Enums {
-  enum ConfirmType {
-    Agree = true,
-    Disagree = false,
-  }
-  enum ButtonType {
-    default = "default",
-    hover = "hover",
-    disabled = "disabled",
-  }
-  enum CommunityTabs {
-    all = "all",
-    free = "free",
-    pregnancy = "pregnancy",
-    childcare = "childcare",
-  }
+type MenuKeys =
+  | "home"
+  | "about"
+  | "community"
+  | "sos"
+  | "login"
+  | "register"
+  | "mypage";
+type MenuList = Record<MenuKeys, MenuItem>;
+interface Tab {
+  text: string;
 }
+interface CommunityTab extends Tab {
+  value: CommunityTabsEnum;
+}
+interface MypageArticleTab extends Tab {
+  value: ContentsTypeEnum;
+}
+interface MypageSubTab extends Tab {
+  value: MypageSideMenuEnum;
+  subMenu: MypageSideMenuEnum;
+}
+interface MypageTab extends Tab {
+  value?: MypageSideMenuEnum;
+  subMenu?: MypageSubTab[];
+}
+type NextuiColor =
+  | "none"
+  | "primary"
+  | "secondary"
+  | "default"
+  | "success"
+  | "warning"
+  | "danger"
+  | undefined;

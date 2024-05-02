@@ -4,7 +4,7 @@ import { BtnBasic } from "@/components/bootstrap/button/btn_basic";
 import useCreateCommentMutation from "@/models/hooks/comment/post_comment.hooks";
 
 interface Props {
-  contentsType: ContentsType;
+  contentsType: ContentsTypeEnum;
   contentsId: number;
   content: string;
   setComment: React.Dispatch<React.SetStateAction<string>>;

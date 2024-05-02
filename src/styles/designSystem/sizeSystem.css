@@ -1,11 +1,14 @@
 :root {
-  --w-smallBox: 200px;
-  --w-mediumBox: 300px;
-  --w-largeBox: 400px;
+  --w-smallBox: 12.5rem;
+  --w-mediumBox: 18.75rem;
+  --w-largeBox: 25rem;
+  --w-sidebar: 14.25rem;
+  --w-content: 80rem;
+  --w-excludeSidebar: 65.75rem;
 
-  --h-header: 100px;
-  --h-footer: 100px;
-  --h-smallBox: 200px;
-  --h-mediumBox: 300px;
-  --h-largeBox: 400px;
+  --h-header: 6.25rem;
+  --h-footer: 6.25rem;
+  --h-smallBox: 12.5rem;
+  --h-mediumBox: 18.75rem;
+  --h-largeBox: 25rem;
 }

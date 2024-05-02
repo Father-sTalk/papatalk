@@ -19,3 +19,7 @@ body {
     sans-serif;
   font-feature-settings: "tnum", "ss01", "ss02", "ss05", "ss08";
 }
+
+.min-h-body {
+  min-height: calc(100vh - 200px);
+}

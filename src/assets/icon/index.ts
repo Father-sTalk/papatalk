@@ -12,6 +12,7 @@ import MessageIcon from "./default/messages";
 import PencilIcon from "./default/pencil";
 import RankIcon from "./default/ranking";
 import { SearchIcon } from "./default/search";
+import { SpeakerphoneIcon } from "./default/speakerphone";
 import SortIcon from "./feature/sort";
 import ThumbsUpIcon from "./feature/thumbsup";
 import LogoutIcon from "./logout";
@@ -34,5 +35,6 @@ export const ICON = {
   rank: RankIcon,
   search: SearchIcon,
   sort: SortIcon,
+  speaker: SpeakerphoneIcon,
   thumb: ThumbsUpIcon,
 };

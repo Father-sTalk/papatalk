@@ -1,5 +1,40 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
+enum ButtonTypeEnum {
+  default = "default",
+  hover = "hover",
+  disabled = "disabled",
+}
+enum GenderTypeEnum {
+  male = "male",
+  female = "female",
+}
+enum ConfirmTypeEnum {
+  agree = 1,
+  disagree = 0,
+}
+enum CommunityTabsEnum {
+  all = "all",
+  free = "free",
+  pregnancy = "pregnancy",
+  childcare = "childcare",
+}
+enum MypageSideMenuEnum {
+  profile = "profile",
+  article = "article",
+  myarticle = "myarticle",
+  otherarticle = "otherarticle",
+  baby = "baby",
+}
+enum ContentsTypeEnum {
+  all = "all",
+  community = "community",
+  sos = "sos",
+}
+enum SosTabsEnum {
+  all = "all",
+  wait = "wait",
+  solved = "solved",
+}
 namespace ApiRequest {
   namespace AuthApiTypes {
     interface LoginRequest {
@@ -16,6 +51,9 @@ namespace ApiRequest {
     interface DuplicationCheckRequest {
       email?: string;
       nickname?: string;
+    }
+    interface ResetPasswordRequest {
+      email: string;
     }
   }
   namespace CommunityApiTypes {
@@ -46,43 +84,40 @@ namespace ApiRequest {
   }
   namespace CommentApiTypes {
     interface GetCommentListRequest {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       sort?: string;
       page?: number;
     }
     interface CreateCommentRequest {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       content: string;
     }
     interface PostCommentRecommend {
-      contentsType: ContentsType;
+      contentsType: ContentsTypeEnum;
       contentsId: number;
       commentId: number;
     }
   }
 }
-interface CommunityArticle {
+interface Article {
   id: number;
   title: string;
   views: number;
   likes: number;
   createdAt: string;
-  category: string;
   authorNickname: string;
+}
+interface CommunityArticle extends Article {
+  category: string;
 }
 interface PopularCommunityArticle extends CommunityArticle {
   thumbnail: string;
 }
-interface SosArticle {
-  id: number;
-  title: string;
+interface SosArticle extends Article {
   content: string;
-  views: number;
-  likes: number;
   commentsCount: number;
-  createdAt: string;
 }
 interface CommentItem {
   id: number;
@@ -93,6 +128,10 @@ interface CommentItem {
   liked: boolean;
   authorId: number;
   authorNickname: string;
+}
+
+interface MyContents extends Article {
+  contentsType: ContentsTypeEnum;
 }
 namespace ApiResponse {
   namespace AuthApiTypes {
@@ -151,6 +190,19 @@ namespace ApiResponse {
   namespace CommentApiTypes {
     interface CommentListResponse {
       commentList: CommentItem[];
+      totalCount: number;
+      totalPage: number;
+      currentPage: number;
+    }
+  }
+  namespace UsersApiTypes {
+    interface ProfileResponse {
+      email: string;
+      nickname: string;
+      profileImage: string;
+    }
+    interface MyArticleResponse {
+      contentsList: MyContents[];
       totalCount: number;
       totalPage: number;
       currentPage: number;

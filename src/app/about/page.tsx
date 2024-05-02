@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <section className="w-full h-[90vh] pt-[100px] flex gap-6">
-      <div className="w-[50%] h-[400px] p-6">
+    <section className="w-full h-[90vh] pt-[6.25rem] flex gap-6">
+      <div className="w-[50%] h-[25rem] p-6">
         <Image
           src="/img/about/hands.png"
           alt="아이와 나"
@@ -13,7 +13,7 @@ const AboutPage = () => {
           height={350}
         />
       </div>
-      <div className="w-[50%] h-[400px] p-6">
+      <div className="w-[50%] h-[25rem] p-6">
         <div className="w-full h-full p-6 bg-gradient-to-b from-primary-100 to-white rounded-2xl text-body1">
           <div className="">
             <p>안녕하세요.</p>
