@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://papatalk.vercel.app/home
+
+# Sitemaps
+Sitemap: https://papatalk.vercel.app/home/sitemap.xml
