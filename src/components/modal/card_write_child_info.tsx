@@ -35,7 +35,7 @@ const CardChildInfo: React.FC<Props> = ({ mode }) => {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label className="text-subtitle2">성별</label>
-          <div className="flex flex-row gap-6">
+          <div className="flex flex-row gap-6 pl-1">
             <CheckBoxBasic
               checked={checkedGender === GenderTypeEnum.male}
               text="남자"
@@ -88,10 +88,10 @@ const CardChildInfo: React.FC<Props> = ({ mode }) => {
             className="text-base"
           />
         </div>
+        <BtnBasic color="primary" fullWidth>
+          {mode === "input" || mode === "modal" ? "입력" : "변경사항 저장"}
+        </BtnBasic>
       </div>
-      <BtnBasic color="primary" fullWidth>
-        {mode === "input" || mode === "modal" ? "입력" : "변경사항 저장"}
-      </BtnBasic>
       {(mode === "input" || mode === "modal") && (
         <p
           role="button"

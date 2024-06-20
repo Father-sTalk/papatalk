@@ -33,6 +33,7 @@ module.exports = {
       height: {
         header: "var(--h-header)",
         footer: "var(--h-footer)",
+        ssBox: "var(--h-ssBox)",
         smallBox: "var(--h-smallBox)",
         middleBox: "var(--h-middleBox)",
         largeBox: "var(--h-largeBox)",
@@ -91,6 +92,7 @@ module.exports = {
         layout_divider: "var(--layout-divider)",
         layout_black: "var(--layout-black)",
         layout_white: "var(--layout-white)",
+        txt: "var(--txt)",
       },
       gridTemplateColumns: {
         list: "665fr 222fr 115fr 115fr 115fr",

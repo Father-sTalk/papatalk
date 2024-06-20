@@ -1,58 +1,69 @@
 import React from "react";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { ICON } from "@/assets/icon";
 
 const articles = [
   {
-    descriptions: ["나의 소중한 아내 임신을 했는데..", "어떻게 해야할까요?"],
+    title: "자유게시판",
+    descriptions: "자유롭게 다른 파파야들과 함께 고민을 나눠보아요.",
     imgSrc: "/img/home/second_article_1.png",
     path: "/sos",
   },
   {
-    descriptions: ["아빠가 해야할 육아는 따로 있나요?"],
+    title: "임신",
+    descriptions:
+      "선물 같이 찾아온 아이, 하지만 우리 모두가 아빠는 처음이라서 궁금한 점들이 많을거예요.",
     imgSrc: "/img/home/second_article_2.png",
     path: "/sos",
   },
   {
-    descriptions: ["아내가 없이", "아기와 둘이 있는 순간이 두려워요.."],
+    title: "육아",
+    descriptions: "다른 파파야들의 생생한 육아 경험기들을 만나보세요.",
     imgSrc: "/img/home/second_article_3.png",
     path: "/sos",
   },
 ];
 const SecondArticles = () => {
+  const router = useRouter();
   return (
     <section>
-      <article className="flex flex-col gap-2 p-6">
-        <div className="flex justify-between">
-          <p className="text-article text-layout_black">
-            다른 파파야들과 함께 고민을 나눠보아요.
-          </p>
-          <div className="flex items-center">
-            <span className="text-menu text-primary-500">더 보기</span>
-            <ICON.chevronRight
-              color="primary"
-              size={{ width: 14, height: 14 }}
-            />
-          </div>
-        </div>
+      <article className="flex flex-col gap-4 p-6">
+        <p className="text-h3 text-layout_black">
+          파파야는 아빠들만을 위한 소통창고의 서비스를 제공합니다.
+        </p>
         <div className="grid grid-cols-3 gap-4">
           {articles.map((article, index) => (
-            <div key={index} className="relative flex flex-col items-center">
+            <div
+              key={index}
+              className="flex flex-col gap-6 items-start border border-layout_divider rounded-2xl p-4"
+            >
               <Image
                 src={article.imgSrc}
                 alt="article image"
                 width={400}
                 height={200}
               />
-              <div className="w-[87%] absolute flex justify-between top-6 left-6 text-subtitle1 text-white">
-                <div>
-                  {article.descriptions.map((description, index) => (
-                    <p key={index}>{description}</p>
-                  ))}
+              <div className="flex flex-col justify-between">
+                <div className="flex flex-col gap-4 h-ssBox">
+                  <p className="text-subtitle1 text-txt">{article.title}</p>
+                  <p className="text-subtitle1 text-default-500">
+                    {article.descriptions}
+                  </p>
                 </div>
-                <ICON.arrowUp color="white" />
+                <div
+                  role="button"
+                  className="flex flex-row gap-1 items-center"
+                  onClick={() => router.push(article.path)}
+                >
+                  <span className="text-primary-500 text-button">바로가기</span>
+                  <ICON.arrowUp
+                    color="primary"
+                    size={{ width: 16, height: 16 }}
+                  />
+                </div>
               </div>
             </div>
           ))}
