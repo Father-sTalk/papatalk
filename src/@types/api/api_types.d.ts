@@ -133,6 +133,11 @@ interface CommentItem {
 interface MyContents extends Article {
   contentsType: ContentsTypeEnum;
 }
+interface BabyGrowthData {
+  month: number;
+  height: number;
+  weight: number;
+}
 namespace ApiResponse {
   namespace AuthApiTypes {
     interface LoginResponse {
@@ -206,6 +211,9 @@ namespace ApiResponse {
       totalCount: number;
       totalPage: number;
       currentPage: number;
+    }
+    namespace BabyTypes {
+      type BabyInfoResponse = BabyGrowthData[];
     }
   }
 }
