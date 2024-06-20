@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 interface UserState {
+  init: boolean;
   accessToken: string | null;
   refreshToken: string | null;
   nickname: string | null;
@@ -16,6 +17,7 @@ interface UserState {
 }
 
 const useUserStore = create<UserState>((set) => ({
+  init: false,
   accessToken: null,
   refreshToken: null,
   nickname: null,
@@ -25,7 +27,7 @@ const useUserStore = create<UserState>((set) => ({
     const refreshToken = localStorage.getItem("refreshToken");
     const nickname = localStorage.getItem("nickname");
     const profileImage = localStorage.getItem("profileImage");
-    set({ accessToken, refreshToken, nickname, profileImage });
+    set({ accessToken, refreshToken, nickname, profileImage, init: true });
   },
   login: (accessToken, refreshToken, nickname, profileImage) => {
     localStorage.setItem("accessToken", accessToken);

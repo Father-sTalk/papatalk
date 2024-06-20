@@ -12,11 +12,13 @@ import MessageIcon from "./default/messages";
 import PencilIcon from "./default/pencil";
 import RankIcon from "./default/ranking";
 import { SearchIcon } from "./default/search";
+import SmileIcon from "./default/smile";
 import { SpeakerphoneIcon } from "./default/speakerphone";
 import SortIcon from "./feature/sort";
 import ThumbsUpIcon from "./feature/thumbsup";
 import LogoutIcon from "./logout";
 import RadioSelectIcon from "./radioSelect";
+
 export const ICON = {
   arrowUp: ArrowUp,
   calendar: CalendarIcon,
@@ -34,6 +36,7 @@ export const ICON = {
   radioSelect: RadioSelectIcon,
   rank: RankIcon,
   search: SearchIcon,
+  smile: SmileIcon,
   sort: SortIcon,
   speaker: SpeakerphoneIcon,
   thumb: ThumbsUpIcon,

@@ -16,6 +16,7 @@ const useGetAccessByRefresh = () => {
       );
     },
     onError: () => {
+      login("", "", "", "");
       logout();
     },
   });
