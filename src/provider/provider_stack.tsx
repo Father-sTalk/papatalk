@@ -1,6 +1,6 @@
 import React from "react";
 
-import Modal from "@/components/bootstrap/container/modal_container";
+import Modal from "@/components/bootstrap/container/container_modal";
 interface Props {
   children: React.ReactNode;
 }

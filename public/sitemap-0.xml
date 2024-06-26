@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://papatalk.vercel.app/community/create</loc><lastmod>2024-06-20T18:20:21.910Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/login</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/about</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/home</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/register</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/mypage</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/sos</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/terms/privacy</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/sos/create</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/terms/service</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://papatalk.vercel.app/community</loc><lastmod>2024-06-20T18:20:21.911Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/community</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/home</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/login</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/register</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/terms/service</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/sos/create</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/terms/privacy</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/mypage</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/sos</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/about</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://papatalk.vercel.app/community/create</loc><lastmod>2024-06-26T16:02:04.804Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

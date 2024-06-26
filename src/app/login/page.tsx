@@ -4,7 +4,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
-import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
+import ContainerCenterCard from "@/components/bootstrap/container/container_center_card";
 import BtnLogin from "@/components/feature/button/btn_login";
 
 const LoginPage = () => {
@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   const router = useRouter();
   return (
-    <CenterCardContainer>
+    <ContainerCenterCard>
       <div className="flex flex-col gap-6">
         <span className="text-h4 text-layout_black">로그인</span>
         <section className="flex flex-col gap-4">
@@ -60,7 +60,7 @@ const LoginPage = () => {
           </span>
         </p>
       </div>
-    </CenterCardContainer>
+    </ContainerCenterCard>
   );
 };
 
