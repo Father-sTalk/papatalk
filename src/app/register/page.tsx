@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { ICON } from "@/assets/icon";
 import CheckBoxRight from "@/components/bootstrap/checkbox/checkbox_right";
-import CenterCardContainer from "@/components/bootstrap/container/center_card_container";
+import ContainerCenterCard from "@/components/bootstrap/container/container_center_card";
 import BtnDuplicationCheck from "@/components/feature/button/btn_duplicationCheck";
 import BtnRegister from "@/components/feature/button/btn_register";
 import { validator } from "@/utils/validate/validate";
@@ -32,7 +32,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <CenterCardContainer>
+    <ContainerCenterCard>
       <div className="flex flex-col gap-6">
         <span className="text-h4 text-layout_black">회원가입</span>
         <section className="flex flex-col">
@@ -169,7 +169,7 @@ const RegisterPage = () => {
           privacyPolicyAgreed={privacyPolicyAgreed}
         />
       </div>
-    </CenterCardContainer>
+    </ContainerCenterCard>
   );
 };
 
