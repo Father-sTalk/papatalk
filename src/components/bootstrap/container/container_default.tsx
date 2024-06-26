@@ -3,13 +3,13 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 import Header from "@/components/header/header";
-// import { MENU } from "@/constants/menu";
+
 interface Props {
   children: React.ReactNode;
 }
 const exceptPath = ["exception"];
 
-const DefaultContainer: React.FC<Props> = ({ children }) => {
+const ContainerDefault: React.FC<Props> = ({ children }) => {
   const path = usePathname();
   const containerClasses = "w-full h-full mx-auto ";
   const isExceptPath = exceptPath.includes(path);
@@ -22,4 +22,4 @@ const DefaultContainer: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default DefaultContainer;
+export default ContainerDefault;

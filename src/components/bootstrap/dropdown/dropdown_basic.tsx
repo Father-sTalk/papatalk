@@ -57,7 +57,7 @@ const DropdownBasic: React.FC<Props> = ({
         onSelectionChange={changeHandler}
       >
         {list.map((item) => (
-          <DropdownItem key={item} value={item} classNames={{}}>
+          <DropdownItem key={item} value={item} textValue={item}>
             <p className="text-layout_black">{item}</p>
           </DropdownItem>
         ))}

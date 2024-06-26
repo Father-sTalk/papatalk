@@ -7,7 +7,7 @@ import useUserStore from "@/store/store_user";
 interface Props {
   children: React.ReactNode;
 }
-const LoadingProvider: React.FC<Props> = ({ children }) => {
+const ProviderLoading: React.FC<Props> = ({ children }) => {
   const isFetching = useIsFetching();
   const isMutating = useIsMutating();
   const { nickname } = useUserStore();
@@ -64,7 +64,7 @@ const LoadingProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default LoadingProvider;
+export default ProviderLoading;
 interface ToastProps {
   text: string;
 }

@@ -6,7 +6,7 @@ import useUserStore from "@/store/store_user";
 interface Props {
   children: React.ReactNode;
 }
-const AuthProvider: React.FC<Props> = ({ children }) => {
+const ProviderAuth: React.FC<Props> = ({ children }) => {
   const { mutate } = useGetAccessByRefresh();
   const { initialize } = useUserStore();
   React.useEffect(() => {
@@ -16,4 +16,4 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   return <React.Fragment>{children}</React.Fragment>;
 };
 
-export default AuthProvider;
+export default ProviderAuth;
