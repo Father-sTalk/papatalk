@@ -4,7 +4,7 @@ import Modal from "@/components/bootstrap/container/modal_container";
 interface Props {
   children: React.ReactNode;
 }
-const StackProvider: React.FC<Props> = ({ children }) => {
+const ProviderStack: React.FC<Props> = ({ children }) => {
   return (
     <React.Fragment>
       <Modal />
@@ -13,4 +13,4 @@ const StackProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default StackProvider;
+export default ProviderStack;
