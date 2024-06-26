@@ -3,30 +3,37 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+import { CommunityTabsEnum } from "@/@types/enum/enums";
 import { ICON } from "@/assets/icon";
+import { useCommunityTabStore } from "@/store/store_community_tab";
 
 const articles = [
   {
     title: "자유게시판",
     descriptions: "자유롭게 다른 파파야들과 함께 고민을 나눠보아요.",
     imgSrc: "/img/home/second_article_1.png",
-    path: "/sos",
+    path: "/community",
+    tab: CommunityTabsEnum.free,
   },
   {
     title: "임신",
     descriptions:
       "선물 같이 찾아온 아이, 하지만 우리 모두가 아빠는 처음이라서 궁금한 점들이 많을거예요.",
     imgSrc: "/img/home/second_article_2.png",
-    path: "/sos",
+    path: "/community",
+    tab: CommunityTabsEnum.pregnancy,
   },
   {
     title: "육아",
     descriptions: "다른 파파야들의 생생한 육아 경험기들을 만나보세요.",
     imgSrc: "/img/home/second_article_3.png",
-    path: "/sos",
+    path: "/community",
+    tab: CommunityTabsEnum.childcare,
   },
 ];
 const SecondArticles = () => {
+  const { setTab } = useCommunityTabStore();
+
   const router = useRouter();
   return (
     <section>
@@ -56,7 +63,10 @@ const SecondArticles = () => {
                 <div
                   role="button"
                   className="flex flex-row gap-1 items-center"
-                  onClick={() => router.push(article.path)}
+                  onClick={() => {
+                    setTab(article.tab);
+                    router.push(article.path);
+                  }}
                 >
                   <span className="text-primary-500 text-button">바로가기</span>
                   <ICON.arrowUp
@@ -79,6 +89,7 @@ const SecondArticles = () => {
             <div
               className="flex gap-2 items-center text-secondary-500 text-text-subtitle2"
               role="button"
+              onClick={() => router.push("/sos")}
             >
               <span>아빠들의 멘토링 공간 살펴보기</span>
               <ICON.chevronRight
